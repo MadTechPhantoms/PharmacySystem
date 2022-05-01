@@ -3,7 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_add_prod.xml" value="0.3625" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_delete_conf.xml" value="0.3625" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_feedback_main.xml" value="0.3625" />
         <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_prod_cat.xml" value="0.33" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_prod_detail.xml" value="0.3484375" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_prod_view.xml" value="0.33" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_prod_view_cus.xml" value="0.5" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_upd_prod.xml" value="0.33" />
       </map>
     </option>
   </component>
