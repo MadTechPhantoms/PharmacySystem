@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewCard">
+
+    <ImageButton
+        android:id="@+id/imgbtn_DeleteCard"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="262dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:foregroundTint="#2196F3"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_CardDetails"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:srcCompat="@android:drawable/ic_menu_delete"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tv_PaymentHolder"
+        android:layout_width="386dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="13dp"
+        android:text="@string/tv_ViewHolder"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_HolderName"
+        tools:text="@string/tv_ViewHolder" />
+
+    <TextView
+        android:id="@+id/tv_ExpDate3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="308dp"
+        android:text="@string/tv_ExpDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_PaymentHolder"
+        tools:text="@string/tv_ExpDate" />
+
+    <TextView
+        android:id="@+id/tv_HolderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="308dp"
+        android:text="@string/tv_HolderName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_PaymentCardNo"
+        tools:text="@string/tv_HolderName" />
+
+    <TextView
+        android:id="@+id/tv_UpdateCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="147dp"
+        android:text="@string/tv_ViewCard"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imageView27"
+        app:layout_constraintStart_toEndOf="@+id/imgbtn_UpdateCardB"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/tv_ViewCard" />
+
+    <ImageButton
+        android:id="@+id/imgbtn_UpdateCardB"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="235dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@+id/imageView11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backicon"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="93dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/caringpharmacy" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="379dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radbtn_UpdateDebit"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/radbtn_ViewDebit"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:text="@string/radbtn_ViewDebit" />
+
+        <RadioButton
+            android:id="@+id/radbtn_UpdateCredit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:checked="false"
+            android:text="@string/radbtn_ViewCredit"
+            android:textAlignment="textStart"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:text="@string/radbtn_ViewCredit" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_CardDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/tv_CardDetails"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        tools:text="@string/tv_CardDetails" />
+
+    <TextView
+        android:id="@+id/tv_CardNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="308dp"
+        android:text="@string/tv_CardNo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_CardDetails"
+        tools:text="@string/tv_CardNo" />
+
+    <TextView
+        android:id="@+id/tv_CVV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="158dp"
+        android:text="@string/tv_CVV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_ExpDate3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_PaymentHolder"
+        tools:text="@string/tv_CVV" />
+
+    <TextView
+        android:id="@+id/tv_PaymentCardNo"
+        android:layout_width="386dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="13dp"
+        android:text="@string/tv_ViewCardNo"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_CardNo"
+        tools:text="@string/tv_ViewCardNo" />
+
+    <TextView
+        android:id="@+id/tv_PaymentExpDate"
+        android:layout_width="199dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tv_ViewExpDate"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ExpDate3"
+        tools:text="@string/tv_ViewExpDate" />
+
+    <TextView
+        android:id="@+id/tv_PaymentCVV"
+        android:layout_width="174dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="13dp"
+        android:text="@string/tv_ViewCVV"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_PaymentExpDate"
+        app:layout_constraintTop_toBottomOf="@+id/tv_CVV"
+        tools:text="@string/tv_ViewCVV" />
+</androidx.constraintlayout.widget.ConstraintLayout>

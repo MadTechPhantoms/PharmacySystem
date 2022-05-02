@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomePage">
+
+    <Button
+        android:id="@+id/btn_SignUpWelcome"
+        android:layout_width="388dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="#267458"
+        android:text="@string/btn_SignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_SignInWelcome"
+        tools:text="@string/btn_SignUp" />
+
+    <Button
+        android:id="@+id/btn_SignInWelcome"
+        android:layout_width="388dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="#267458"
+        android:text="@string/btn_SignIn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        tools:text="@string/btn_SignIn" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="93dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/caringpharmacy" />
+
+    <TextView
+        android:id="@+id/tv_WelcomePage"
+        android:layout_width="229dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="92dp"
+        android:text="@string/tv_WelcomePage"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        tools:text="@string/tv_WelcomePage" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="305dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="83dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_WelcomePage"
+        app:srcCompat="@drawable/welcomepage" />
+
+    <TextView
+        android:id="@+id/tv_SkipInWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/tv_SkipInWelcome"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_SignUpWelcome"
+        tools:text="@string/tv_SkipInWelcome" />
+</androidx.constraintlayout.widget.ConstraintLayout>
