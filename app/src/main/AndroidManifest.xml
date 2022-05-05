@@ -73,6 +73,43 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        //IT20658472
+
+        <activity
+            android:name=".FeedbackEditActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            android:label="@string/title_activity_feedback_edit"
+            android:theme="@style/Theme.CaringPharmacy.NoActionBar"
+        </activity>
+        <activity
+            android:name=".FeedbackCreateActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            android:label="@string/title_activity_feedback_create"
+            android:theme="@style/Theme.CaringPharmacy.NoActionBar"
+        </activity>
+        <activity
+            android:name=".FeedbackMainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
     </application>
 
 </manifest>

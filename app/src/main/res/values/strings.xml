@@ -45,4 +45,37 @@
     <string name="confno">No</string>
     <string name="quantity">3</string>
     <string name="addcart">Add to cart</string>
+
+    //IT20658472
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="msg">Very useful and great pharmacy, They have the best support ever</string>
+    <string name="add">Add</string>
+    <string name="hint">TYPE YOUR  FEEDBACK HERE</string>
+    <string name="name">Harsha.D</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="feedback">Feedback</string>
+
+    <string name="title_activity_feedback_create">FeedbackCreateActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_feedback_edit">FeedbackEditActivity</string>
+
+    <style name="Theme.Mad" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!--        name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant-->
+
+    </style>
 </resources>
