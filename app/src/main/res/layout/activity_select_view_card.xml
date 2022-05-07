@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SelectCard">
+    tools:context=".SelectViewCard">
 
     <ImageView
         android:id="@+id/imageView32"
@@ -88,20 +88,20 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/tv_SelectCard"
+        android:id="@+id/tv_SelectViewCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="158dp"
-        android:text="@string/tv_SelectCard"
+        android:text="@string/tv_SelectViewCard"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/imageView28"
         app:layout_constraintStart_toEndOf="@+id/imgbtn_AddCardB2"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/tv_SelectCard" />
+        tools:text="@string/tv_SelectViewCard" />
 
     <ImageButton
         android:id="@+id/imgbtn_AddCardB2"

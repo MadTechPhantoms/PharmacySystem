@@ -3,10 +3,10 @@ package com.example.caringpharmacy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,11 +23,31 @@ public class ViewUserProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_user_profile);
 
-        tv_UserName = findViewById(R.id.et_Fname);
-        tv_UserEmail = findViewById(R.id.et_SignUpEmail);
+        tv_UserName = findViewById(R.id.tv_UserName);
+        tv_UserEmail = findViewById(R.id.tv_UserEmail);
+    }
+    public void openCardOptions(View view) {
+        Intent intent = new Intent(this, CardOptions.class);
+
+        startActivity(intent);
+    }
+    public void openAccSettings(View view) {
+        Intent intent = new Intent(this, AccSettings.class);
+
+        startActivity(intent);
+    }
+   public void openEditProfile(View view) {
+        Intent intent = new Intent(this, EditUserProfile.class);
+
+        String userName = tv_UserName.getText().toString();
+        String email = tv_UserEmail.getText().toString();
+
+        intent.putExtra("un", userName);
+        intent.putExtra("em", email);
     }
 
-    public void readData(View view){
+    public void readCustomer(View view){
+
         DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("Cus1");
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -48,5 +68,6 @@ public class ViewUserProfile extends AppCompatActivity {
 
             }
         });
+
     }
 }

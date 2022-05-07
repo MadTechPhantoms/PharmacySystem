@@ -115,7 +115,7 @@
     <string name="tv_CVV">CVV</string>
     <string name="et_AddCVV">111</string>
     <string name="btn_AddCard">ADD</string>
-    <string name="tv_SelectCard">Select a Card</string>
+    <string name="tv_SelectViewCard">View a Card</string>
     <string name="radbtn_Card1">5391 - XXXX - XXXX - 9876</string>
     <string name="radbtn_Card2">5391 - XXXX - XXXX - 2234</string>
     <string name="radbtn_Card3">4691 - XXXX - XXXX - 7865</string>
@@ -130,10 +130,10 @@
     <string name="tv_UpdateCard">Update a Card</string>
     <string name="radbtn_UpdateDebit">Debit Card</string>
     <string name="radbtn_UpdateCredit">Credit Card</string>
-    <string name="et_UpdateCardNo">XXXX XXXX XXXX XXXX</string>
-    <string name="et_UpdateHolder">Prathibha</string>
-    <string name="et_UpdateExpDate">05/24</string>
-    <string name="et_UpdateCVV">111</string>
+    <string name="et_CardNo">XXXX XXXX XXXX XXXX</string>
+    <string name="et_Holder">Prathibha</string>
+    <string name="et_ExpDate">05/24</string>
+    <string name="et_CVV">111</string>
     <string name="btn_UpdateCard">UPDATE</string>
     <string name="tv_Payment">Payment</string>
     <string name="radbtn_PaymentDebit">Debit Card</string>
@@ -157,4 +157,5 @@
     <string name="btn_SignUp">Sign Up</string>
     <string name="tv_WelcomePage">Welcome to Caring Pharmacy</string>
     <string name="tv_SkipInWelcome">Skip for now</string>
+    <string name="tv_SelectUpdateCard">Update a Card</string>
 </resources>

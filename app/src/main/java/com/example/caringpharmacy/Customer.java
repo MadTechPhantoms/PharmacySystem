@@ -1,23 +1,28 @@
 package com.example.caringpharmacy;
 
 public class Customer {
-    private String id;
+    private String email;
     private String firstName;
     private String lastName;
-    private String email;
     private Integer phoneNo;
     private String password;
 
     public Customer() {
     }
 
-    public String getId() {
-
-        return id;
+    public Customer(String firstName, String lastName, Integer phoneNo, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNo = phoneNo;
+        this.password = password;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getFirstName() {
@@ -34,14 +39,6 @@ public class Customer {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public Integer getPhoneNo() {

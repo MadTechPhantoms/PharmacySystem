@@ -23,7 +23,7 @@
         tools:text="@string/tv_EditProfile" />
 
     <EditText
-        android:id="@+id/et_UserLname"
+        android:id="@+id/et_UserFname"
         android:layout_width="378dp"
         android:layout_height="36dp"
         android:layout_marginStart="16dp"
@@ -31,14 +31,14 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/et_UserLname"
+        android:text="@string/et_UserFname"
         android:textAlignment="textStart"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Lname"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Fname"
         tools:ignore="TouchTargetSizeCheck"
-        tools:text="@string/et_UserLname" />
+        tools:text="@string/et_UserFname" />
 
     <ImageButton
         android:id="@+id/imgbtn_EditUserB"
@@ -48,6 +48,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="235dp"
         android:backgroundTint="#FFFFFF"
+        android:onClick="backUserProfile"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toStartOf="@+id/imageView11"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,9 +73,9 @@
         android:id="@+id/imageView16"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="160dp"
+        android:layout_marginStart="155dp"
         android:layout_marginTop="85dp"
-        android:layout_marginEnd="151dp"
+        android:layout_marginEnd="155dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,17 +100,29 @@
         tools:text="@string/tv_ProfDetails" />
 
     <TextView
-        android:id="@+id/tv_Fname"
+        android:id="@+id/tv_CusEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="176dp"
-        android:layout_marginEnd="326dp"
-        android:text="@string/tv_Fname"
+        android:layout_marginEnd="305dp"
+        android:text="@string/tv_CusEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgbtn_EditUserB"
+        tools:text="@string/tv_CusEmail" />
+
+    <TextView
+        android:id="@+id/tv_Fname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="327dp"
+        android:text="@string/tv_Fname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_UserEmail"
         tools:text="@string/tv_Fname" />
 
     <TextView
@@ -118,25 +131,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="327dp"
+        android:layout_marginEnd="326dp"
         android:text="@string/tv_Lname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_UserFname"
         tools:text="@string/tv_Lname" />
-
-    <TextView
-        android:id="@+id/tv_CusEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="305dp"
-        android:text="@string/tv_CusEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_UserLname"
-        tools:text="@string/tv_CusEmail" />
 
     <TextView
         android:id="@+id/tv_CusPhone"
@@ -148,7 +148,7 @@
         android:text="@string/tv_CusPhone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_UserEmail"
+        app:layout_constraintTop_toBottomOf="@+id/et_UserLname"
         tools:text="@string/tv_CusPhone" />
 
     <Button
@@ -165,7 +165,7 @@
         app:layout_constraintTop_toBottomOf="@+id/et_UserPhone" />
 
     <EditText
-        android:id="@+id/et_UserFname"
+        android:id="@+id/et_UserEmail"
         android:layout_width="378dp"
         android:layout_height="36dp"
         android:layout_marginStart="16dp"
@@ -173,15 +173,15 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/et_UserFname"
+        android:text="@string/et_UserEmail"
         android:textAlignment="textStart"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Fname"
+        app:layout_constraintTop_toBottomOf="@+id/tv_CusEmail"
         tools:ignore="TouchTargetSizeCheck"
-        tools:text="@string/et_UserFname" />
+        tools:text="@string/et_UserEmail" />
 
     <ImageButton
         android:id="@+id/imgbtn_DeleteProf"
@@ -192,6 +192,7 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="#FFFFFF"
         android:foregroundTint="#2196F3"
+        android:onClick="openDeleteProfile"
         android:scaleType="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -201,7 +202,7 @@
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/et_UserEmail"
+        android:id="@+id/et_UserLname"
         android:layout_width="378dp"
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
@@ -209,12 +210,13 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="@string/et_UserEmail"
+        android:text="@string/et_UserLname"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_CusEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Lname"
         tools:ignore="TouchTargetSizeCheck"
-        tools:text="@string/et_UserEmail" />
+        tools:text="@string/et_UserLname" />
 
     <EditText
         android:id="@+id/et_UserPhone"
@@ -226,6 +228,7 @@
         android:ems="10"
         android:inputType="phone"
         android:text="@string/et_UserPhone"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_CusPhone"

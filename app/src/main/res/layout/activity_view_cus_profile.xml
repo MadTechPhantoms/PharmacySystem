@@ -48,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_CusEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Lname"
         tools:text="@string/tv_CusEmail2" />
 
     <TextView
@@ -63,7 +63,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Lname"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Fname"
         tools:text="@string/tv_CusLname" />
 
     <TextView
@@ -81,7 +81,7 @@
         tools:text="@string/tv_CusPhone" />
 
     <TextView
-        android:id="@+id/tv_CusEmail"
+        android:id="@+id/tv_Lname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -95,7 +95,7 @@
         tools:text="@string/tv_CusEmail" />
 
     <TextView
-        android:id="@+id/tv_Lname"
+        android:id="@+id/tv_Fname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -152,7 +152,7 @@
         tools:text="@string/tv_ProfDetails" />
 
     <TextView
-        android:id="@+id/tv_Fname"
+        android:id="@+id/tv_CusEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -177,7 +177,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Fname"
+        app:layout_constraintTop_toBottomOf="@+id/tv_CusEmail"
         tools:text="@string/tv_CusFname" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

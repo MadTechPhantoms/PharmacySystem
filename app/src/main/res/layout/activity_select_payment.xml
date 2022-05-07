@@ -226,7 +226,7 @@
         tools:text="@string/tv_PaymentCVV" />
 
     <Button
-        android:id="@+id/btn_PaymentConfirm"
+        android:id="@+id/btn_UpdateCard"
         android:layout_width="388dp"
         android:layout_height="56dp"
         android:layout_marginStart="12dp"

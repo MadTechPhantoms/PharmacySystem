@@ -7,21 +7,6 @@
     tools:context=".CardOptions">
 
     <ImageButton
-        android:id="@+id/imgbtn_CardOptUpdate"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="205dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="28dp"
-        android:backgroundTint="#FFFFFF"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_CardOptUpdate"
-        app:layout_constraintTop_toBottomOf="@+id/imgbtn_CardOptView"
-        app:srcCompat="@drawable/forwardicon"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <ImageButton
         android:id="@+id/imgbtn_CardOptView"
         android:layout_width="28dp"
         android:layout_height="28dp"
@@ -29,6 +14,7 @@
         android:layout_marginTop="34dp"
         android:layout_marginEnd="28dp"
         android:backgroundTint="#FFFFFF"
+        android:onClick="openSelectViewCard"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_CardOptView"
@@ -40,10 +26,11 @@
         android:id="@+id/imgbtn_CardOptAdd"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        android:layout_marginStart="226dp"
-        android:layout_marginTop="142dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="176dp"
         android:layout_marginEnd="28dp"
         android:backgroundTint="#FFFFFF"
+        android:onClick="openAddCard"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -53,48 +40,25 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <ImageView
-        android:id="@+id/imageView26"
-        android:layout_width="21dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView22"
-        app:srcCompat="@drawable/cardicon" />
-
-    <ImageView
         android:id="@+id/imageView22"
         android:layout_width="21dp"
         android:layout_height="21dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="46dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView18"
         app:srcCompat="@drawable/cardicon" />
 
     <TextView
-        android:id="@+id/tv_CardOptUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="260dp"
-        android:text="@string/tv_CardOptUpdate"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView26"
-        app:layout_constraintTop_toBottomOf="@+id/tv_CardOptView"
-        tools:text="@string/tv_CardOptUpdate" />
-
-    <TextView
         android:id="@+id/tv_CardOptView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="46dp"
         android:layout_marginEnd="276dp"
         android:text="@string/tv_CardOptView"
         android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView22"
         app:layout_constraintTop_toBottomOf="@+id/tv_CardOptAdd"
@@ -149,11 +113,12 @@
         android:id="@+id/tv_CardOptAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="146dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="168dp"
         android:layout_marginEnd="282dp"
         android:text="@string/tv_CardOptAdd"
         android:textColor="#000000"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView18"
         app:layout_constraintTop_toBottomOf="@+id/imgbtn_CardOptionsB"
@@ -164,7 +129,7 @@
         android:layout_width="21dp"
         android:layout_height="21dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="146dp"
+        android:layout_marginTop="172dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgbtn_CardOptionsB"
         app:srcCompat="@drawable/cardicon" />
