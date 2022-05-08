@@ -8,10 +8,13 @@
         <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_feedback_main.xml" value="0.3625" />
         <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_main.xml" value="0.3625" />
         <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_prod_cat.xml" value="0.33" />
-        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_prod_detail.xml" value="0.3484375" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_prod_detail.xml" value="0.22" />
         <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_prod_view.xml" value="0.33" />
-        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_prod_view_cus.xml" value="0.5" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_prod_view_cus.xml" value="0.25" />
         <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/activity_upd_prod.xml" value="0.33" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/prodsinglerow.xml" value="0.2557291666666667" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/singlerow.xml" value="0.3625" />
+        <entry key="..\:/SLIIT study materials/Activities/CaringPharmacy/app/src/main/res/layout/test.xml" value="0.24375" />
       </map>
     </option>
   </component>

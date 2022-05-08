@@ -45,4 +45,8 @@
     <string name="confno">No</string>
     <string name="quantity">3</string>
     <string name="addcart">Add to cart</string>
+    <string name="addtextview4">Category</string>
+    <string name="btn_choose">Choose...</string>
+    <string name="btn_upld">Upload</string>
+    <string name="addtextview5">Image URL</string>
 </resources>
