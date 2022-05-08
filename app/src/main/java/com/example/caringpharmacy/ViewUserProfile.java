@@ -39,16 +39,15 @@ public class ViewUserProfile extends AppCompatActivity {
    public void openEditProfile(View view) {
         Intent intent = new Intent(this, EditUserProfile.class);
 
-        String userName = tv_UserName.getText().toString();
         String email = tv_UserEmail.getText().toString();
 
-        intent.putExtra("un", userName);
         intent.putExtra("em", email);
+        startActivity(intent);
     }
 
     public void readCustomer(View view){
 
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("Cus1");
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("key");
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

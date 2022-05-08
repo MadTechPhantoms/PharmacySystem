@@ -15,6 +15,7 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="#FFFFFF"
         android:foregroundTint="#2196F3"
+        android:onClick="deleteCard"
         android:scaleType="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_CardDetails"
@@ -30,6 +31,7 @@
         android:layout_marginTop="22dp"
         android:layout_marginEnd="12dp"
         android:backgroundTint="#267458"
+        android:onClick="updateCard"
         android:text="@string/btn_UpdateCard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,23 +140,23 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radbtn_AddDebit"
+            android:id="@+id/radbtn_ViewDebit"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="@string/radbtn_UpdateDebit"
+            android:text="@string/radbtn_ViewDebit"
             tools:ignore="TouchTargetSizeCheck"
-            tools:text="@string/radbtn_UpdateDebit" />
+            tools:text="@string/radbtn_ViewDebit" />
 
         <RadioButton
-            android:id="@+id/radbtn_AddCredit"
+            android:id="@+id/radbtn_ViewCredit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:checked="false"
-            android:text="@string/radbtn_UpdateCredit"
+            android:text="@string/radbtn_ViewCredit"
             android:textAlignment="textStart"
             tools:ignore="TouchTargetSizeCheck"
-            tools:text="@string/radbtn_UpdateCredit" />
+            tools:text="@string/radbtn_ViewCredit" />
     </RadioGroup>
 
     <TextView

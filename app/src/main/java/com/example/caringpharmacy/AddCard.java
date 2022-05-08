@@ -27,8 +27,8 @@ public class AddCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_card);
 
-        radbtn_AddDebit = findViewById(R.id.radbtn_AddDebit);
-        radbtn_AddCredit = findViewById(R.id.radbtn_AddCredit);
+        radbtn_AddDebit = findViewById(R.id.radbtn_ViewDebit);
+        radbtn_AddCredit = findViewById(R.id.radbtn_ViewCredit);
         et_AddCardNo = findViewById(R.id.et_CardNo);
         et_AddHolder = findViewById(R.id.et_Holder);
         et_AddExpDate = findViewById(R.id.et_ExpDate);
@@ -66,19 +66,19 @@ public class AddCard extends AppCompatActivity {
             }
             else {
                 //Take inputs from the user and assigning them to this instance (crd) of the Card..
-               if(cardTypeD == "Debit Card")
-                   crd.setCardType(radbtn_AddDebit.getText().toString().trim());
-               else {
-                   crd.setCardType(radbtn_AddCredit.getText().toString().trim());
-               }
-               crd.setCardNo(Integer.parseInt(et_AddCardNo.getText().toString().trim()));
-               crd.setHolderName(et_AddHolder.getText().toString().trim());
-               crd.setExpDate(Integer.parseInt(et_AddExpDate.getText().toString().trim()));
-               crd.setCvv(Integer.parseInt(et_AddCVV.getText().toString().trim()));
+                crd.setCardNo(Integer.parseInt(et_AddCardNo.getText().toString().trim()));
+                if(cardTypeD == "Debit Card")
+                    crd.setCardType(radbtn_AddDebit.getText().toString().trim());
+                else {
+                    crd.setCardType(radbtn_AddCredit.getText().toString().trim());
+                }
+                crd.setHolderName(et_AddHolder.getText().toString().trim());
+                crd.setExpDate(Integer.parseInt(et_AddExpDate.getText().toString().trim()));
+                crd.setCvv(Integer.parseInt(et_AddCVV.getText().toString().trim()));
 
                 //Insert in to the database...
                 dbRef.push().setValue(crd);
-                //dbRef.child("Crd1").setValue(cus); //to replace data to same record
+                //dbRef.child("Crd").setValue(crd); //to replace data to same record
 
                 //Feedback to the user via a Toast...
                 Toast.makeText(getApplicationContext(), "Card added Successfully", Toast.LENGTH_SHORT).show();
