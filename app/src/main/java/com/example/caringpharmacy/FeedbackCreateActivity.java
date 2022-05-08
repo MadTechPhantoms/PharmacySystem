@@ -9,6 +9,7 @@ import com.example.caringpharmacy.Fragment.FeedbackFragment;
 public class FeedbackCreateActivity extends AppCompatActivity {
 
     private ImageButton back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +19,8 @@ public class FeedbackCreateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(FeedbackCreateActivity.this, FeedbackFragment.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); finish();
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                finish();
             }
         });
     }
