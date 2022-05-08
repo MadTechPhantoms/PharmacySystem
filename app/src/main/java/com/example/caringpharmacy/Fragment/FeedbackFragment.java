@@ -24,7 +24,6 @@ public class FeedbackFragment extends Fragment {
     public FeedbackFragment() {
         // Required empty public constructor
     }
-    //code
 
 
     @Override
