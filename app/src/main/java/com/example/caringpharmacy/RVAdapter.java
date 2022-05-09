@@ -1,4 +1,4 @@
-package com.example.caringpharmacy.Feedback;
+package com.example.caringpharmacy;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
-{
+public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private Context context;
     ArrayList<Feedback> list = new ArrayList<>();
     public RVAdapter(Context ctx)
@@ -59,6 +58,7 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                         intent.putExtra("EDIT",emp);
                         context.startActivity(intent);
                         break;
+                    //delete  feedback
                     case R.id.menu_remove:
                         DAOFeedback dao=new DAOFeedback();
                         dao.remove(emp.getKey()).addOnSuccessListener(suc->

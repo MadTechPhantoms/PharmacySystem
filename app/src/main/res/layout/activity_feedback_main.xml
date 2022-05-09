@@ -1,30 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".FeedbackMainActivity">
-    <FrameLayout
-        android:layout_above="@+id/bottom_navigation_view"
-        android:id="@+id/container"
+    tools:context=".MainActivity"
+    android:padding="15dp"
+    android:orientation="vertical">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_behavior = "@string/appbar_scrolling_view_behavior"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_view"
+        android:layout_height="55dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="55dp"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_back_black"/>
+
+
+        <TextView
+            android:layout_weight="5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feedback"
+            android:textColor="@color/text_color"
+            android:textSize="17sp"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/text_color"
+        android:text="Email"/>
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_behavior = "@string/appbar_scrolling_view_behavior"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navigation_menu"/>
-</RelativeLayout>
+        android:background="#DCDCDC"
+        android:layout_marginTop="11dp"
+        android:textSize="17dp"
+        android:padding="7dp"
+        android:id="@+id/edit_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/text_color"
+        android:text="Your Feedback"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:textSize="16sp"
+        android:minHeight="200dp"
+        android:gravity="start"
+        android:background="#DCDCDC"
+        android:inputType="textCapSentences|textMultiLine"
+        android:id="@+id/edit_position"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_submit"
+        android:background="@color/btn"
+        android:text="Submit"
+        android:textColor="@android:color/white"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_open"
+        android:text="View Feedbacks" />
+
+</LinearLayout>

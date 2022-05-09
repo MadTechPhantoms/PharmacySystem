@@ -1,4 +1,4 @@
-package com.example.caringpharmacy.Feedback;
+package com.example.caringpharmacy;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,8 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class RVActivity extends AppCompatActivity
-{
+public class RVActivity extends AppCompatActivity {
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView recyclerView;
     RVAdapter adapter;
@@ -70,10 +69,10 @@ public class RVActivity extends AppCompatActivity
         });
 
     }
-
+    // retrieve feedbacks from database
     private void loadData()
     {
-        
+
         swipeRefreshLayout.setRefreshing(true);
         dao.get(key).addListenerForSingleValueEvent(new ValueEventListener()
         {
@@ -102,3 +101,5 @@ public class RVActivity extends AppCompatActivity
         });
     }
 }
+
+

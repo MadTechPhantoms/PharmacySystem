@@ -78,4 +78,7 @@
         <!--        name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant-->
 
     </style>
+
+
+    <string name="title_activity_rv">RVActivity</string>
 </resources>
