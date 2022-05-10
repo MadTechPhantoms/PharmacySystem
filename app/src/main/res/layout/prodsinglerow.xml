@@ -47,7 +47,7 @@
             android:textSize="25sp" />
 
         <ImageButton
-            android:id="@+id/viewbtn"
+            android:id="@+id/dltbtn"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:layout_below="@id/prod_name"
@@ -65,7 +65,7 @@
             android:layout_marginLeft="-101dp"
             android:layout_marginTop="42dp"
             android:layout_marginRight="10dp"
-            android:layout_toRightOf="@id/viewbtn"
+            android:layout_toRightOf="@id/dltbtn"
             android:src="@drawable/edit"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </RelativeLayout>

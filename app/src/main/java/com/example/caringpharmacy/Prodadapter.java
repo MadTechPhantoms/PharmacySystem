@@ -25,10 +25,11 @@ public class Prodadapter extends FirebaseRecyclerAdapter<modelprod, Prodadapter.
         super(options);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onBindViewHolder(@NonNull prodviewholder holder, @SuppressLint("RecyclerView") int position, @NonNull modelprod model) {
         holder.prdname.setText(model.getPrname());
-        holder.prdprice.setText(String.valueOf(model.getPrprice().shortValue()));
+        holder.prdprice.setText(("LKR ") + String.valueOf(model.getPrprice().shortValue()) + ".00");
         Glide.with(holder.img.getContext()).load(model.getPrimgurl()).into(holder.img);
 
         holder.dltbtn.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +76,7 @@ public class Prodadapter extends FirebaseRecyclerAdapter<modelprod, Prodadapter.
             prdprice = (TextView) itemView.findViewById(R.id.prod_price);
 
             editbtn=(ImageButton)itemView.findViewById(R.id.editbtn);
-            dltbtn=(ImageButton)itemView.findViewById(R.id.viewbtn);
+            dltbtn=(ImageButton)itemView.findViewById(R.id.dltbtn);
         }
     }
 }
