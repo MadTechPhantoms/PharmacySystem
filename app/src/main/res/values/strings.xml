@@ -15,7 +15,7 @@
     <string name="catbtn7">Women</string>
     <string name="catbtn8">Cosmetics</string>
     <string name="catbtn9">Men</string>
-    <string name="prodtopic1"><![CDATA[Products/Mom & Baby]]></string>
+    <string name="prodtopic1">Products</string>
     <string name="addtopic1">Add Product</string>
     <string name="addtext1">Category</string>
     <string name="addtext2">Product Name</string>
@@ -49,4 +49,5 @@
     <string name="btn_choose">Choose...</string>
     <string name="btn_upld">Upload</string>
     <string name="addtextview5">Image URL</string>
+    <string name="viewprod"><![CDATA[View>>]]></string>
 </resources>

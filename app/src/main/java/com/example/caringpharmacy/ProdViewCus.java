@@ -11,24 +11,24 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ProdViewCus extends AppCompatActivity {
 
-    RecyclerView recview;
-    prodadapter adapter;
+    RecyclerView cusrecview;
+    Cusprodadapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prod_view_cus);
 
-        recview = (RecyclerView) findViewById(R.id.recview);
-        recview.setLayoutManager(new LinearLayoutManager(this));
+        cusrecview = (RecyclerView) findViewById(R.id.cusrecview);
+        cusrecview.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<modelprod> options =
                 new FirebaseRecyclerOptions.Builder<modelprod>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Product"), modelprod.class)
                         .build();
 
-        adapter = new prodadapter(options);
-        recview.setAdapter(adapter);
+        adapter = new Cusprodadapter(options);
+        cusrecview.setAdapter(adapter);
 
     }
 

@@ -76,7 +76,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recview"
+        android:id="@+id/cusrecview"
         android:layout_width="322dp"
         android:layout_height="433dp"
         android:layout_marginStart="45dp"

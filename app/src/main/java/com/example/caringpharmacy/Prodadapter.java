@@ -19,9 +19,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class prodadapter extends FirebaseRecyclerAdapter<modelprod, prodadapter.prodviewholder> {
+public class Prodadapter extends FirebaseRecyclerAdapter<modelprod, Prodadapter.prodviewholder> {
 
-    public prodadapter(@NonNull FirebaseRecyclerOptions<modelprod> options) {
+    public Prodadapter(@NonNull FirebaseRecyclerOptions<modelprod> options) {
         super(options);
     }
 
@@ -75,7 +75,7 @@ public class prodadapter extends FirebaseRecyclerAdapter<modelprod, prodadapter.
             prdprice = (TextView) itemView.findViewById(R.id.prod_price);
 
             editbtn=(ImageButton)itemView.findViewById(R.id.editbtn);
-            dltbtn=(ImageButton)itemView.findViewById(R.id.dltbtn);
+            dltbtn=(ImageButton)itemView.findViewById(R.id.viewbtn);
         }
     }
 }
