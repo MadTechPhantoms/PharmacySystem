@@ -1,28 +1,43 @@
 package com.example.caringpharmacy;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class EditUserProfile extends AppCompatActivity {
 
     EditText et_UserEmail, et_UserFname, et_UserLname,  et_UserPhone;
     Button btn_SaveUserProf;
-    Customer cus;
-    DatabaseReference dbRef;
-    String email;
+
+    FirebaseAuth mAuth;
+    FirebaseFirestore fstore;
+    String uid;
+    String email, firstName, lastName, phoneNo;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,113 +50,129 @@ public class EditUserProfile extends AppCompatActivity {
         et_UserPhone = findViewById(R.id.et_UserPhone);
 
         btn_SaveUserProf = findViewById(R.id.btn_SaveUserProf);
+        mAuth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
+        uid = mAuth.getCurrentUser().getUid();
+        user =mAuth.getCurrentUser();
 
-        cus = new Customer();
+        btn_SaveUserProf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(EditUserProfile.this);
+                builder.setTitle("Re Authentication");
+                builder.setMessage("Enter Your Password");
+                final EditText input = new EditText(EditUserProfile.this);
 
-        Intent intent = getIntent();
-        email= intent.getStringExtra("em");
+                input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD );
+                builder.setView(input);
 
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String mPassword = input.getText().toString();
+                        ReAuthentication(mPassword);
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-        et_UserEmail.setText(email);
+                        dialog.cancel();
+
+                    }
+                });
+                builder.show();
+            }
+        });
+        getData();
 
     }
+
+    private void ReAuthentication(String mPassword) {
+        AuthCredential credential = EmailAuthProvider.getCredential(email,mPassword);
+        user.reauthenticate(credential).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+
+                updateDetails();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+    }
+
+    private void updateDetails() {
+        String user_email = et_UserEmail.getText().toString();
+        String user_fName = et_UserFname.getText().toString();
+        String user_lName = et_UserLname.getText().toString();
+        String user_phone = et_UserPhone.getText().toString();
+
+        user.updateEmail(user_email).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+
+                fstore.collection("User").document(uid).update( "email",user_email);
+                fstore.collection("User").document(uid).update( "firstName",user_fName);
+                fstore.collection("User").document(uid).update( "lastName",user_lName);
+                fstore.collection("User").document(uid).update( "phoneNo",user_phone);
+
+                Toast.makeText(EditUserProfile.this,"Successfully Updated",Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+                Toast.makeText(EditUserProfile.this,"Error",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void getData() {
+
+        DocumentReference documentReference = fstore.collection("User").document(uid);
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                email = (String) documentSnapshot.getData().get("email");
+                firstName= (String) documentSnapshot.getData().get("firstName");
+                lastName= (String) documentSnapshot.getData().get("lastName");
+                phoneNo = (String) documentSnapshot.getData().get("phoneNo");
+
+                setData(email,firstName,lastName,phoneNo);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+
+    }
+
+    private void setData(String email,String firstName,String lastName, String phoneNo) {
+        et_UserEmail.setText(email);
+        et_UserFname.setText(firstName);
+        et_UserLname.setText(lastName);
+        et_UserPhone.setText(phoneNo);
+    }
+
     public void backUserProfile(View view) {
         Intent intent = new Intent(this, ViewUserProfile.class);
 
         startActivity(intent);
     }
+
     public void openDeleteProfile(View view) {
-        Intent intent = new Intent(this, MsgDeleteProfile.class);
-
-        startActivity(intent);
-    }
-    //Method to clear all user inputs
-    public void clearControls() {
-        et_UserEmail.setText("");
-        et_UserFname.setText("");
-        et_UserLname.setText("");
-        et_UserPhone.setText("");
-    }
-    public void showData(View view){
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("key");
-        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChildren()) {
-                    et_UserEmail.setText(snapshot.child("email").getValue().toString());
-                    et_UserFname.setText(snapshot.child("firstname").getValue().toString());
-                    et_UserLname.setText(snapshot.child("lastname").getValue().toString());
-                    et_UserPhone.setText(snapshot.child("phoneNo").getValue().toString());
-                }
-                else {
-                    //Toast.makeText(getApplicationContext(), "No Source to Display", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(EditUserProfile.this, "No Source to Display", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-    public void updateData(View view) {
-        DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Customer");
-        updRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChild("key")) {
-                    try{
-                        cus.setEmail(et_UserEmail.getText().toString().trim());
-                        cus.setFirstName(et_UserFname.getText().toString().trim());
-                        cus.setLastName(et_UserLname.getText().toString().trim());
-                        cus.setPhoneNo(Integer.parseInt(et_UserPhone.getText().toString().trim()));
-
-                        dbRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("key");
-                        dbRef.setValue(cus);
-                        clearControls();
-
-                        //Feedback to the user via Toast...
-                        Toast.makeText(getApplicationContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
-                    }
-                    catch (NumberFormatException e) {
-                        Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "No Source to Update", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-    public void deleteData(View view) {
-        DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("Customer");
-        delRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChild("key")) {
-                    dbRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("key");
-                    dbRef.removeValue();
-                    clearControls();
-                    Toast.makeText(getApplicationContext(), "Data Deleted Successfully", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "No Source to Delete", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        Intent intent = getIntent();
+        String uid = intent.getStringExtra("user");
+        Intent intent2 = new Intent(this, MsgDeleteProfile.class);
+        intent2.putExtra("user", uid);
+        startActivity(intent2);
     }
 
 }

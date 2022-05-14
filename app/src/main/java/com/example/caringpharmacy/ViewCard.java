@@ -52,7 +52,7 @@ public class ViewCard extends AppCompatActivity {
         et_CVV.setText("");
     }
 
-    public void showData(View view){
+/*    public void showData(View view){
         DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Card").child("key");
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -65,7 +65,7 @@ public class ViewCard extends AppCompatActivity {
                 }
                 else {
                     //Toast.makeText(getApplicationContext(), "No Source to Display", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(ViewCard.this, "No Source to Display", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(ViewCard.this, "No Source to Display", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -93,10 +93,9 @@ public class ViewCard extends AppCompatActivity {
                         crd.setExpDate(Integer.parseInt(et_ExpDate.getText().toString().trim()));
                         crd.setCvv(Integer.parseInt(et_CVV.getText().toString().trim()));
 
-                        dbRef = FirebaseDatabase.getInstance().getReference().child("Customer").child("key");
+                        dbRef = FirebaseDatabase.getInstance().getReference().child("Card").child("key");
                         dbRef.setValue(crd);
                         clearControls();
-
                         //Feedback to the user via Toast...
                         Toast.makeText(getApplicationContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
                     }
@@ -108,7 +107,6 @@ public class ViewCard extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "No Source to Update", Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -137,6 +135,6 @@ public class ViewCard extends AppCompatActivity {
 
             }
         });
-    }
+    }*/
 
 }

@@ -15,7 +15,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AddCard extends AppCompatActivity {
 
-    String cardTypeD, cardTypeC;
     RadioButton radbtn_AddDebit, radbtn_AddCredit;
     EditText et_AddCardNo, et_AddHolder, et_AddExpDate, et_AddCVV;
     Button btn_AddCard;
@@ -33,9 +32,6 @@ public class AddCard extends AppCompatActivity {
         et_AddHolder = findViewById(R.id.et_Holder);
         et_AddExpDate = findViewById(R.id.et_ExpDate);
         et_AddCVV = findViewById(R.id.et_CVV);
-
-        cardTypeD = radbtn_AddDebit.getText().toString().trim();
-        cardTypeC = radbtn_AddCredit.getText().toString().trim();
 
         btn_AddCard = findViewById(R.id.btn_UpdateCard);
 
@@ -63,30 +59,24 @@ public class AddCard extends AppCompatActivity {
             }
             else if(TextUtils.isEmpty(et_AddCVV.getText().toString())) {
                 Toast.makeText(getApplicationContext(), "Please enter a CVV", Toast.LENGTH_SHORT).show();
-            }
-            else {
+            } else {
                 //Take inputs from the user and assigning them to this instance (crd) of the Card..
+
                 crd.setCardNo(Integer.parseInt(et_AddCardNo.getText().toString().trim()));
-                if(cardTypeD == "Debit Card")
-                    crd.setCardType(radbtn_AddDebit.getText().toString().trim());
-                else {
-                    crd.setCardType(radbtn_AddCredit.getText().toString().trim());
-                }
                 crd.setHolderName(et_AddHolder.getText().toString().trim());
                 crd.setExpDate(Integer.parseInt(et_AddExpDate.getText().toString().trim()));
                 crd.setCvv(Integer.parseInt(et_AddCVV.getText().toString().trim()));
 
                 //Insert in to the database...
                 dbRef.push().setValue(crd);
-                //dbRef.child("Crd").setValue(crd); //to replace data to same record
-
+                //dbRef.child("key").setValue(crd); //to replace data to same record
                 //Feedback to the user via a Toast...
                 Toast.makeText(getApplicationContext(), "Card added Successfully", Toast.LENGTH_SHORT).show();
                 clearControls();
             }
-        }
-        catch(NumberFormatException e){
+        } catch(NumberFormatException e){
             Toast.makeText(getApplicationContext(), "Invalid Card Number", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

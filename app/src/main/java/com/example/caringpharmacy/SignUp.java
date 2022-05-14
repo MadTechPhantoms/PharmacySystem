@@ -3,27 +3,33 @@ package com.example.caringpharmacy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
 
     EditText et_SignUpEmail, et_Fname, et_Lname, et_Phone, et_SignUpPass, et_ConfirmPass;
     Button btn_SignUp;
-    Customer cus;
-    DatabaseReference dbRef;
+    private String EmailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    FirebaseAuth mAuth;
+    FirebaseFirestore fstore;
+    String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,51 +45,146 @@ public class SignUp extends AppCompatActivity {
 
         btn_SignUp = findViewById(R.id.btn_SignUp);
 
-        //Init firebase
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference table_cus = database.getReference("Customer");
+        mAuth = FirebaseAuth.getInstance();
+        fstore=FirebaseFirestore.getInstance();
 
         btn_SignUp.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
-                final ProgressDialog mDialog = new ProgressDialog(SignUp.this);
-                mDialog.setMessage("Please waiting...");
-                mDialog.show();
 
-                table_cus.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        //Check if already customer email
-                        if(snapshot.child(et_SignUpEmail.getText().toString()).exists()) {
-                            mDialog.dismiss();
-                            Toast.makeText(SignUp.this, "Email already register", Toast.LENGTH_SHORT).show();
-                        }
-                        else {
-                            mDialog.dismiss();
-                            Customer cus = new Customer(et_Fname.getText().toString(), et_Lname.getText().toString(), Integer.parseInt(et_Phone.getText().toString()), et_SignUpPass.getText().toString());
-                            table_cus.child(et_SignUpEmail.getText().toString()).setValue(cus);
-                            Toast.makeText(SignUp.this,"Sign up successfully", Toast.LENGTH_SHORT).show();
-                            finish();
-                        }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                validateFields();
 
+            }
+        });
+    }
+
+    private void LogUser() {
+        Intent intent = new Intent(this, CustomerLogin.class);
+        startActivity(intent);
+
+    }
+
+    private void validateFields() {
+
+        String email, firstName, lastName, mobile, sPass, cPass;
+
+        email=et_SignUpEmail.getText().toString();
+        firstName=et_Fname.getText().toString();
+        lastName=et_Lname.getText().toString();
+        mobile=et_Phone.getText().toString();
+        sPass=et_SignUpPass.getText().toString();
+        cPass=et_ConfirmPass.getText().toString();
+
+
+        if(!(email.isEmpty())){
+
+            if(!(firstName.isEmpty())){
+                if(!(lastName.isEmpty())){
+                    if (!(mobile.isEmpty())){
+                        if(!(sPass.isEmpty())){
+                            if(!(cPass.isEmpty())){
+
+                                if(email.matches(EmailPattern)){
+
+                                    String passwordPattern = "[a-zA-Z0-9\\\\!\\\\@\\\\#\\\\$]{8,24}";
+                                    if(sPass.matches(passwordPattern)){
+                                        if (cPass.matches(passwordPattern)){
+                                            if(sPass.equals(cPass)) {
+
+                                                RegisterCustomer(email, firstName, lastName, mobile, sPass);
+                                                Toast.makeText(SignUp.this, "Hello User " + firstName + " " + lastName, Toast.LENGTH_SHORT).show();
+
+                                            }else{
+                                                et_ConfirmPass.setError("password should be same");
+                                            }
+                                        }else{
+                                            et_ConfirmPass.setError("password length should 8-24");
+                                        }
+                                    }else{
+                                        et_SignUpPass.setError("password length should 8-24");
+                                    }
+                                }else{
+                                    et_SignUpEmail.setError("Invalid Email");
+                                }
+                            }else{
+                                et_ConfirmPass.setError("Please fill this");
+                            }
+                        }else{
+                            et_SignUpPass.setError("Please fill this");
+                        }
+
+                    }else{
+                        et_Phone.setError("Please fill this");
                     }
-                });
+
+                }else{
+                    et_Lname.setError("Please fill this");
+                }
+
+            }else{
+                et_Fname.setError("Please fill this");
             }
 
-        });
+        }else{
+            et_SignUpEmail.setError("Please fill this");
+        }
 
-        //cus = new Customer();
     }
+
+        private void RegisterCustomer(String email, String firstName, String lastName, String mobile, String sPass) {
+
+        mAuth.createUserWithEmailAndPassword(email,sPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                //success
+                if(task.isSuccessful()){
+
+                    //save user in the firebase
+
+                    uid = mAuth.getCurrentUser().getUid();
+                    Map<String,Object> user = new HashMap<>();
+                    user.put("email",email);
+                    user.put("firstName",firstName);
+                    user.put("lastName",lastName);
+                    user.put("phoneNo",mobile);
+                    user.put("password",sPass);
+
+                    DocumentReference documentReference =fstore.collection("User").document(uid);
+                    documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(SignUp.this, "Data Saved", Toast.LENGTH_SHORT).show();
+                            clearControls();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(SignUp.this, "Data Not Saved", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    LogUser();
+
+                }else{
+                    Toast.makeText(SignUp.this, "Error", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+                //not success
+            }
+        });
+    }
+
     public void backWelcome(View view) {
         Intent intent = new Intent(this, WelcomePage.class);
 
         startActivity(intent);
     }
-/*    //Method to clear all user inputs
+
+    //Method to clear all user inputs
     public void clearControls() {
         et_SignUpEmail.setText("");
         et_Fname.setText("");
@@ -93,48 +194,4 @@ public class SignUp extends AppCompatActivity {
         et_ConfirmPass.setText("");
     }
 
-    public void createCustomer(View view) {
-        Intent intent = new Intent(this, CustomerLogin.class);
-        dbRef = FirebaseDatabase.getInstance().getReference().child("Customer");
-        try {
-            if(TextUtils.isEmpty(et_SignUpEmail.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Please enter an Email address", Toast.LENGTH_SHORT).show();
-            }
-            else if(TextUtils.isEmpty(et_Fname.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Please enter a First Name", Toast.LENGTH_SHORT).show();
-            }
-            else if(TextUtils.isEmpty(et_Lname.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Please enter a Last Name", Toast.LENGTH_SHORT).show();
-            }
-            else if(TextUtils.isEmpty(et_Phone.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Please enter a Mobile Number", Toast.LENGTH_SHORT).show();
-            }
-            else if(TextUtils.isEmpty(et_SignUpPass.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Please enter a Password", Toast.LENGTH_SHORT).show();
-            }
-            else if(TextUtils.isEmpty(et_ConfirmPass.getText().toString())) {
-                Toast.makeText(getApplicationContext(), "Please enter the Password Again", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                //Take inputs from the user and assigning them to this instance (cus) of the Customer..
-                cus.setEmail(et_SignUpEmail.getText().toString().trim());
-                cus.setFirstName(et_Fname.getText().toString().trim());
-                cus.setLastName(et_Lname.getText().toString().trim());
-                cus.setPhoneNo(Integer.parseInt(et_Phone.getText().toString().trim()));
-                cus.setPassword(et_SignUpPass.getText().toString().trim());
-
-                //Insert in to the database...
-                dbRef.push().setValue(cus);
-                //dbRef.child("Cus1").setValue(cus); //to replace data to same record
-
-                //Feedback to the user via a Toast...
-                Toast.makeText(getApplicationContext(), "Sign Up Successfully", Toast.LENGTH_SHORT).show();
-                clearControls();
-            }
-        }
-        catch(NumberFormatException e){
-            Toast.makeText(getApplicationContext(), "Invalid Phone Number", Toast.LENGTH_SHORT).show();
-        }
-        startActivity(intent);
-    }*/
 }

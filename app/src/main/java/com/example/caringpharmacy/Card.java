@@ -2,7 +2,6 @@ package com.example.caringpharmacy;
 
 public class Card {
     private Integer cardNo;
-    private String cardType;
     private String holderName;
     private Integer expDate;
     private Integer cvv;
@@ -16,14 +15,6 @@ public class Card {
 
     public void setCardNo(Integer cardNo) {
         this.cardNo = cardNo;
-    }
-
-    public String getCardType() {
-        return cardType;
-    }
-
-    public void setCardType(String cardType) {
-        this.cardType = cardType;
     }
 
     public String getHolderName() {
