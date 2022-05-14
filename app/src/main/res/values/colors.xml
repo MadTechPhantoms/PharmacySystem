@@ -14,4 +14,29 @@
     <color name="catbtn1color">#267458</color>
     <color name="catbtn2color">#2879FF</color>
     <color name="color1">#CFD8DD</color>
+
+
+    //IT20658472
+
+<!--    <color name="purple_200">#48B58E</color>-->
+<!--    <color name="purple_500">#2E9570</color>-->
+<!--    <color name="purple_700">#267458</color>-->
+<!--    <color name="teal_200">#FF03DAC5</color>-->
+<!--    <color name="teal_700">#FF018786</color>-->
+<!--    <color name="black">#FF000000</color>-->
+<!--    <color name="white">#FFFFFFFF</color>-->
+<!--    <color name="text_color">#1C3146</color>-->
+<!--    <color name="btn">#267458</color>-->
+    <color name="line">#F097ACA4</color>
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+<!--    <color name="black">#FF000000</color>-->
+    <color name="text_color">#1C3146</color>
+<!--    <color name="purple_700">#267458</color>-->
+<!--    <color name="purple_500">#2E9570</color>-->
+<!--    <color name="purple_200">#48B58E</color>-->
+    <color name="btn">#267458</color>
+<!--    <color name="white">#FFFFFFFF</color>-->
 </resources>
