@@ -74,7 +74,7 @@ public class Prodadapter extends FirebaseRecyclerAdapter<modelprod, Prodadapter.
             @Override
             public void onClick(View v) {
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.img.getContext())
-                        .setContentHolder(new ViewHolder(R.layout.updprodpopup))
+                        .setContentHolder(new ViewHolder(R.layout.activity_upd_prod))
                         .setExpanded(true, 1600)
                         .create();
 
