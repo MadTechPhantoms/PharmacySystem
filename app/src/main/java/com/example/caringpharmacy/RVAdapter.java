@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class RVAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     ArrayList<Feedback> list = new ArrayList<>();
     public RVAdapter(Context ctx)
@@ -54,11 +54,10 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                 switch (item.getItemId())
                 {
                     case R.id.menu_edit:
-                        Intent intent=new Intent(context,MainActivity.class);
+                        Intent intent=new Intent(context,FeedbackMainActivity.class);
                         intent.putExtra("EDIT",emp);
                         context.startActivity(intent);
                         break;
-                    //delete  feedback
                     case R.id.menu_remove:
                         DAOFeedback dao=new DAOFeedback();
                         dao.remove(emp.getKey()).addOnSuccessListener(suc->
@@ -85,3 +84,4 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         return list.size();
     }
 }
+

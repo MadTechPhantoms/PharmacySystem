@@ -1,15 +1,15 @@
 package com.example.caringpharmacy;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,11 +26,12 @@ public class RVActivity extends AppCompatActivity {
     DAOFeedback dao;
     boolean isLoading=false;
     String key =null;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rv);
+        setContentView(R.layout.activity_rvactivity);
+
         swipeRefreshLayout = findViewById(R.id.swip);
         recyclerView = findViewById(R.id.rv);
         recyclerView.setHasFixedSize(true);
@@ -63,13 +64,13 @@ public class RVActivity extends AppCompatActivity {
         add_feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(), MainActivity.class);
+                Intent intent = new Intent(getBaseContext(), FeedbackMainActivity.class);
                 startActivity(intent);
             }
         });
 
     }
-    // retrieve feedbacks from database
+
     private void loadData()
     {
 
@@ -101,5 +102,7 @@ public class RVActivity extends AppCompatActivity {
         });
     }
 }
+
+
 
 

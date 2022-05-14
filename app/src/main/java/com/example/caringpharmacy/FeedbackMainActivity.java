@@ -17,6 +17,7 @@ public class FeedbackMainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback_main);
+
         final EditText edit_name = findViewById(R.id.edit_name);
         final EditText edit_position = findViewById(R.id.edit_position);
         Button btn = findViewById(R.id.btn_submit);
@@ -40,7 +41,6 @@ public class FeedbackMainActivity extends AppCompatActivity {
             btn.setText("SUBMIT");
             btn_open.setVisibility(View.VISIBLE);
         }
-        //add a feedback to database
         btn.setOnClickListener(v->
         {
             Feedback emp = new Feedback(edit_name.getText().toString(), edit_position.getText().toString());
@@ -49,6 +49,8 @@ public class FeedbackMainActivity extends AppCompatActivity {
                 dao.add(emp).addOnSuccessListener(suc ->
                 {
                     Toast.makeText(this, "Record is inserted", Toast.LENGTH_SHORT).show();
+                    Intent intentt =new Intent(FeedbackMainActivity.this, RVActivity.class);
+                    startActivity(intentt);
                 }).addOnFailureListener(er ->
                 {
                     Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
@@ -56,7 +58,6 @@ public class FeedbackMainActivity extends AppCompatActivity {
             }
             else
             {
-                //update a feedback to database
                 HashMap<String, Object> hashMap = new HashMap<>();
                 hashMap.put("email", edit_name.getText().toString());
                 hashMap.put("feedbackdt", edit_position.getText().toString());
@@ -64,6 +65,8 @@ public class FeedbackMainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(this, "Record is updated", Toast.LENGTH_SHORT).show();
                     finish();
+                    Intent intenttt =new Intent(FeedbackMainActivity.this, RVActivity.class);
+                    startActivity(intenttt);
                 }).addOnFailureListener(er ->
                 {
                     Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
@@ -71,7 +74,7 @@ public class FeedbackMainActivity extends AppCompatActivity {
             }
         });
 
-
     }
 }
+
 

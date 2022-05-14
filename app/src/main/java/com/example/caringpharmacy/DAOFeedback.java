@@ -8,39 +8,39 @@ import com.google.firebase.database.Query;
 import java.util.HashMap;
 
 public class DAOFeedback {
+    private DatabaseReference databaseReference;
+    public DAOFeedback()
+    {
+        FirebaseDatabase db =FirebaseDatabase.getInstance();
+        databaseReference = db.getReference(Feedback.class.getSimpleName());
+    }
+    public Task<Void> add(Feedback emp)
+    {
+        return databaseReference.push().setValue(emp);
+    }
 
-        private DatabaseReference databaseReference;
-        public DAOFeedback()
-        {
-            FirebaseDatabase db =FirebaseDatabase.getInstance();
-            databaseReference = db.getReference(Feedback.class.getSimpleName());
-        }
-        public Task<Void> add(Feedback emp)
-        {
-            return databaseReference.push().setValue(emp);
-        }
+    public Task<Void> update(String key, HashMap<String ,Object> hashMap)
+    {
 
-        public Task<Void> update(String key, HashMap<String ,Object> hashMap)
-        {
-            return databaseReference.child(key).updateChildren(hashMap);
-        }
+        return databaseReference.child(key).updateChildren(hashMap);
+    }
+    public Task<Void> remove(String key)
+    {
+        return databaseReference.child(key).removeValue();
+    }
 
-        public Task<Void> remove(String key)
+    public Query get(String key)
+    {
+        if(key == null)
         {
-            return databaseReference.child(key).removeValue();
+            return databaseReference.orderByKey().limitToFirst(8);
         }
+        return databaseReference.orderByKey().startAfter(key).limitToFirst(8);
+    }
 
-        public Query get(String key)
-        {
-            if(key == null)
-            {
-                return databaseReference.orderByKey().limitToFirst(8);
-            }
-            return databaseReference.orderByKey().startAfter(key).limitToFirst(8);
-        }
-
-        public Query get()
-        {
-            return databaseReference;
-        }
+    public Query get()
+    {
+        return databaseReference;
+    }
 }
+
