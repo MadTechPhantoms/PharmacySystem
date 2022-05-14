@@ -6,8 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ProdView">
 
+    <Button
+        android:id="@+id/btn_addprod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="70dp"
+        android:backgroundTint="@color/catbtn1color"
+        android:text="@string/catbtn1"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtv_pname" />
+
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/img_backhome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -60,15 +74,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recview"
-        android:layout_width="322dp"
-        android:layout_height="433dp"
+        android:layout_width="323dp"
+        android:layout_height="395dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="45dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtv_pname" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_addprod" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

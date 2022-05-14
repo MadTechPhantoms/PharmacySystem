@@ -40,7 +40,7 @@ public class AddProd extends AppCompatActivity {
     Uri filepath;
     Bitmap bitmap;
 
-    EditText pname, pprice, pcateg, pimgurl;
+    EditText pname, pprice, pimgurl;
     Button btn_add, choose, upload;
     DatabaseReference dbRef;
     Product prd;
@@ -88,11 +88,10 @@ public class AddProd extends AppCompatActivity {
         });
 
         pname = findViewById(R.id.upd_pname);
-        pprice = findViewById(R.id.upd_price);
-        pcateg = findViewById(R.id.edit_category);
+        pprice = findViewById(R.id.upd_pprice);
         pimgurl = findViewById(R.id.edit_url);
 
-        btn_add = findViewById(R.id.btn_addsub);
+        btn_add = findViewById(R.id.btn_updsub);
 
         prd = new Product();
 
@@ -139,7 +138,6 @@ public class AddProd extends AppCompatActivity {
     }
 
     public void clearControls() {
-        pcateg.setText("");
         pname.setText("");
         pprice.setText("");
         pimgurl.setText("");
@@ -148,10 +146,7 @@ public class AddProd extends AppCompatActivity {
     public void AddData(View view) {
         dbRef = FirebaseDatabase.getInstance().getReference().child("Product");
 
-        if (TextUtils.isEmpty(pcateg.getText().toString())) {
-            Toast.makeText(getApplicationContext(), "Please enter product category", Toast.LENGTH_SHORT).show();
-        }
-        else if (TextUtils.isEmpty(pname.getText().toString())) {
+        if (TextUtils.isEmpty(pname.getText().toString())) {
             Toast.makeText(getApplicationContext(), "Please enter the product name", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(pprice.getText().toString())) {
@@ -161,7 +156,6 @@ public class AddProd extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please enter the Image url", Toast.LENGTH_SHORT).show();
         }
         else {
-            prd.setPrcateg(pcateg.getText().toString().trim());
             prd.setPrname(pname.getText().toString().trim());
             prd.setPrprice(Integer.parseInt(pprice.getText().toString().trim()));
             prd.setPrimgurl(pimgurl.getText().toString().trim());

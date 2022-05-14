@@ -1,6 +1,7 @@
 package com.example.caringpharmacy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,7 +21,8 @@ public class ProdViewCus extends AppCompatActivity {
         setContentView(R.layout.activity_prod_view_cus);
 
         cusrecview = (RecyclerView) findViewById(R.id.cusrecview);
-        cusrecview.setLayoutManager(new LinearLayoutManager(this));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+        cusrecview.setLayoutManager(gridLayoutManager);
 
         FirebaseRecyclerOptions<modelprod> options =
                 new FirebaseRecyclerOptions.Builder<modelprod>()
