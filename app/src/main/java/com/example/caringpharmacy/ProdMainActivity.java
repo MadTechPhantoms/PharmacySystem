@@ -20,7 +20,7 @@ public class ProdMainActivity extends AppCompatActivity {
         prod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProdMainActivity.this,ProdCat.class);
+                Intent intent = new Intent(ProdMainActivity.this,ProdView.class);
                 startActivity(intent);
             }
         });

@@ -7,6 +7,7 @@
     android:backgroundTint="@color/white"
     tools:context=".ProdViewCus">
 
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
@@ -75,15 +76,18 @@
         app:srcCompat="@drawable/picture13"
         tools:ignore="SpeakableTextPresentCheck" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cusrecview"
-        android:layout_width="322dp"
-        android:layout_height="433dp"
+        android:layout_width="321dp"
+        android:layout_height="398dp"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="45dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
-        android:id="@+id/upd_price"
+        android:id="@+id/upd_pprice"
         android:layout_width="274dp"
         android:layout_height="40dp"
         android:layout_marginStart="70dp"
@@ -41,7 +41,7 @@
         android:layout_marginEnd="70dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/addtextview2"
+        android:hint="Product Price"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
         android:layout_marginEnd="70dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/addtextview5"
+        android:hint="Image URL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,27 +69,11 @@
         android:layout_width="274dp"
         android:layout_height="40dp"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="70dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/addtextview1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_category"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/edit_category"
-        android:layout_width="274dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="70dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/addtextview4"
+        android:hint="Product Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +81,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/btn_addsub"
+        android:id="@+id/btn_updsub"
         android:layout_width="304dp"
         android:layout_height="54dp"
         android:layout_marginTop="24dp"
@@ -119,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.211"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upd_price" />
+        app:layout_constraintTop_toBottomOf="@+id/upd_pprice" />
 
     <ImageButton
         android:id="@+id/img_backcat"

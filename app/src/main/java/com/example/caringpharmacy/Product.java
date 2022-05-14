@@ -2,7 +2,6 @@ package com.example.caringpharmacy;
 
 public class Product {
     private String prid;
-    private String prcateg;
     private String prname;
     private Integer prprice;
     private String primgurl;
@@ -13,7 +12,6 @@ public class Product {
         this.prid = prid;
         this.prname = prname;
         this.prprice = prprice;
-        this.prcateg = prcateg;
         this.primgurl = primgurl;
     }
 
@@ -23,14 +21,6 @@ public class Product {
 
     public void setPrid(String prid) {
         this.prid = prid;
-    }
-
-    public String getPrcateg() {
-        return prcateg;
-    }
-
-    public void setPrcateg(String prcateg) {
-        this.prcateg = prcateg;
     }
 
     public String getPrname() {
