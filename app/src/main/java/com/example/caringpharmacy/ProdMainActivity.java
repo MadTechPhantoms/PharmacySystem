@@ -5,22 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 
-public class UpdProd extends AppCompatActivity {
+public class ProdMainActivity extends AppCompatActivity {
 
-    ImageButton back;
+    Button prod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upd_prod);
+        setContentView(R.layout.activity_main_prod);
 
-        back = findViewById(R.id.img_backprdv);
-        back.setOnClickListener(new View.OnClickListener() {
+        prod = findViewById(R.id.btn_prod);
+        prod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UpdProd.this,ProdView.class);
+                Intent intent = new Intent(ProdMainActivity.this,ProdView.class);
                 startActivity(intent);
             }
         });

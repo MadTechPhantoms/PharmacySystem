@@ -1,16 +1,22 @@
 package com.example.caringpharmacy;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
+import android.os.Bundle;
+
+
 public class ContactUs extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
@@ -60,5 +66,9 @@ public class ContactUs extends AppCompatActivity {
 
                 }
         );
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_contact_us);
+
     }
 }
