@@ -1,14 +1,13 @@
 package com.example.caringpharmacy;
 
 public class modelprod {
-    String prname, prcateg, primgurl;
+    String prname, primgurl;
     Integer prprice;
 
     modelprod(){}
 
     public modelprod(String prname, String prcateg, String primgurl, Integer prprice) {
         this.prname = prname;
-        this.prcateg = prcateg;
         this.primgurl = primgurl;
         this.prprice = prprice;
     }
@@ -19,14 +18,6 @@ public class modelprod {
 
     public void setPrname(String prname) {
         this.prname = prname;
-    }
-
-    public String getPrcateg() {
-        return prcateg;
-    }
-
-    public void setPrcateg(String prcateg) {
-        this.prcateg = prcateg;
     }
 
     public String getPrimgurl() {
