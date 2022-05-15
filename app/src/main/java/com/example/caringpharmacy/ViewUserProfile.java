@@ -90,11 +90,6 @@ public class ViewUserProfile extends AppCompatActivity {
 
         startActivity(intent);
     }
-    public void openAccSettings(View view) {
-        Intent intent = new Intent(this, AccSettings.class);
-
-        startActivity(intent);
-    }
 
     public void openWelcome(View view) {
         Intent intent = new Intent(this, WelcomePage.class);
