@@ -9,12 +9,13 @@
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
+        android:id="@+id/viewbtn"
         android:layout_width="147dp"
         android:layout_height="wrap_content"
         android:padding="15dp">
 
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/imgcus"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -47,18 +48,6 @@
             android:text="This is Course "
             android:textColor="#000"
             android:textSize="12sp" />
-
-        <ImageButton
-            android:id="@+id/viewbtn"
-            android:layout_width="wrap_content"
-            android:layout_height="28dp"
-            android:layout_below="@id/prod_price2"
-            android:layout_marginLeft="2dp"
-            android:layout_marginTop="7dp"
-            android:layout_toRightOf="@id/imgcus"
-            android:background="@color/black"
-            android:src="@android:drawable/ic_menu_info_details"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     </RelativeLayout>
 

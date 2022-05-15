@@ -164,6 +164,8 @@ public class AddProd extends AppCompatActivity {
 
             Toast.makeText(getApplicationContext(), "Product added successfully", Toast.LENGTH_SHORT).show();
             clearControls();
+
+
         }
 
     }

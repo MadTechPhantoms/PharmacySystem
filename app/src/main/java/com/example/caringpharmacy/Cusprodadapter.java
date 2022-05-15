@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -64,17 +66,17 @@ public class Cusprodadapter extends FirebaseRecyclerAdapter<modelprod,Cusprodada
 
     class prodviewholder extends RecyclerView.ViewHolder{
 
-        CircleImageView img;
+        ImageView img;
         TextView prdname, prdprice;
-        ImageButton viewbtn;
+        RelativeLayout viewbtn;
 
         public prodviewholder(@NonNull View itemView) {
             super(itemView);
-            img = (CircleImageView) itemView.findViewById(R.id.imgcus);
+            img = (ImageView) itemView.findViewById(R.id.imgcus);
             prdname = (TextView) itemView.findViewById(R.id.prod_name2);
             prdprice = (TextView) itemView.findViewById(R.id.prod_price2);
 
-            viewbtn = (ImageButton)itemView.findViewById(R.id.viewbtn);
+            viewbtn = (RelativeLayout)itemView.findViewById(R.id.viewbtn);
         }
     }
 
