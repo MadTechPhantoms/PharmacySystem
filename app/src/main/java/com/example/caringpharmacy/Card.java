@@ -1,19 +1,19 @@
 package com.example.caringpharmacy;
 
 public class Card {
-    private Integer cardNo;
+    private String cardNo;
     private String holderName;
-    private Integer expDate;
+    private String expDate;
     private Integer cvv;
 
     public Card() {
     }
 
-    public Integer getCardNo() {
+    public String getCardNo() {
         return cardNo;
     }
 
-    public void setCardNo(Integer cardNo) {
+    public void setCardNo(String cardNo) {
         this.cardNo = cardNo;
     }
 
@@ -25,11 +25,11 @@ public class Card {
         this.holderName = holderName;
     }
 
-    public Integer getExpDate() {
+    public String getExpDate() {
         return expDate;
     }
 
-    public void setExpDate(Integer expDate) {
+    public void setExpDate(String expDate) {
         this.expDate = expDate;
     }
 

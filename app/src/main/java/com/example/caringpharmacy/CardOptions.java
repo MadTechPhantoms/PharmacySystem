@@ -19,14 +19,20 @@ public class CardOptions extends AppCompatActivity {
 
         startActivity(intent);
     }
-    public void openSelectViewCard(View view) {
-        Intent intent = new Intent(this, SelectViewCard.class);
+    public void openViewCard(View view) {
+        Intent intent = new Intent(this, ViewCard.class);
 
         startActivity(intent);
     }
-    public void openSelectUpdateCard(View view) {
+
+    public void backUserProfile(View view) {
+        Intent intent = new Intent(this, ViewUserProfile.class);
+
+        startActivity(intent);
+    }
+/*    public void openSelectUpdateCard(View view) {
         Intent intent = new Intent(this, SelectUpdateCard.class);
 
         startActivity(intent);
-    }
+    }*/
 }

@@ -3,6 +3,7 @@ package com.example.caringpharmacy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,8 @@ public class ViewCard extends AppCompatActivity {
         btn_UpdateCard = findViewById(R.id.btn_UpdateCard);
 
         crd = new Card();
+
+        showData();
     }
     //Method to clear all user inputs
     public void clearControls() {
@@ -52,8 +55,14 @@ public class ViewCard extends AppCompatActivity {
         et_CVV.setText("");
     }
 
-/*    public void showData(View view){
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Card").child("key");
+    public void backCardOptions(View view) {
+        Intent intent = new Intent(this, CardOptions.class);
+
+        startActivity(intent);
+    }
+
+    public void showData(){
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Card").child("Card1");
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -81,21 +90,16 @@ public class ViewCard extends AppCompatActivity {
         updRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChild("key")) {
+                if(snapshot.hasChild("Card1")) {
                     try{
-                        crd.setCardNo(Integer.parseInt(et_CardNo.getText().toString().trim()));
-                        if(cardTypeD == "Debit Card")
-                            crd.setCardType(radbtn_ViewDebit.getText().toString().trim());
-                        else {
-                            crd.setCardType(radbtn_ViewCredit.getText().toString().trim());
-                        }
+                        crd.setCardNo(et_CardNo.getText().toString().trim());
                         crd.setHolderName(et_Holder.getText().toString().trim());
-                        crd.setExpDate(Integer.parseInt(et_ExpDate.getText().toString().trim()));
+                        crd.setExpDate(et_ExpDate.getText().toString().trim());
                         crd.setCvv(Integer.parseInt(et_CVV.getText().toString().trim()));
 
-                        dbRef = FirebaseDatabase.getInstance().getReference().child("Card").child("key");
+                        dbRef = FirebaseDatabase.getInstance().getReference().child("Card").child("Card1");
                         dbRef.setValue(crd);
-                        clearControls();
+                        /*clearControls();*/
                         //Feedback to the user via Toast...
                         Toast.makeText(getApplicationContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
                     }
@@ -119,8 +123,8 @@ public class ViewCard extends AppCompatActivity {
         delRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChild("key")) {
-                    dbRef = FirebaseDatabase.getInstance().getReference().child("Card").child("key");
+                if(snapshot.hasChild("Card1")) {
+                    dbRef = FirebaseDatabase.getInstance().getReference().child("Card").child("Card1");
                     dbRef.removeValue();
                     clearControls();
                     Toast.makeText(getApplicationContext(), "Data Deleted Successfully", Toast.LENGTH_SHORT).show();
@@ -135,6 +139,6 @@ public class ViewCard extends AppCompatActivity {
 
             }
         });
-    }*/
+    }
 
 }

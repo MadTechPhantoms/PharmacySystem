@@ -96,4 +96,10 @@ public class ViewUserProfile extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openWelcome(View view) {
+        Intent intent = new Intent(this, WelcomePage.class);
+
+        startActivity(intent);
+    }
+
 }

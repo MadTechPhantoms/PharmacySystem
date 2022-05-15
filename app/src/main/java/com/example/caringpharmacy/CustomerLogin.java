@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class CustomerLogin extends AppCompatActivity {
 
     EditText et_Email, et_Password;
-    Button btn_SignIn;
+    Button btn_SignInC;
     FirebaseAuth mAuth;
 
     @Override
@@ -28,11 +28,11 @@ public class CustomerLogin extends AppCompatActivity {
 
         et_Email = findViewById(R.id.et_Email);
         et_Password = findViewById(R.id.et_Password);
-        btn_SignIn=findViewById(R.id.btn_SignIn);
+        btn_SignInC=findViewById(R.id.btn_SignInC);
 
         mAuth=FirebaseAuth.getInstance();
 
-        btn_SignIn.setOnClickListener(new View.OnClickListener() {
+        btn_SignInC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 validateFields();
@@ -63,6 +63,7 @@ public class CustomerLogin extends AppCompatActivity {
             @Override
             public void onSuccess(AuthResult authResult) {
 
+                Toast.makeText(CustomerLogin.this, "Sign In Successfully", Toast.LENGTH_SHORT).show();
                 logUser();
 
             }
@@ -80,6 +81,12 @@ public class CustomerLogin extends AppCompatActivity {
     public void backWelcome(View view) {
         Intent intent = new Intent(this, WelcomePage.class);
 
+        startActivity(intent);
+    }
+
+    public void openAdminLogin(View view) {
+        Intent intent = new Intent(this, AdminLogin.class);
+        Toast.makeText(CustomerLogin.this, "Admin Login Opening..", Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 

@@ -2,6 +2,7 @@ package com.example.caringpharmacy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -47,7 +48,7 @@ public class AddCard extends AppCompatActivity {
 
     public void createCard(View view) {
         dbRef = FirebaseDatabase.getInstance().getReference().child("Card");
-        try {
+     try {
             if(TextUtils.isEmpty(et_AddCardNo.getText().toString())) {
                 Toast.makeText(getApplicationContext(), "Please enter a Card Number", Toast.LENGTH_SHORT).show();
             }
@@ -62,14 +63,14 @@ public class AddCard extends AppCompatActivity {
             } else {
                 //Take inputs from the user and assigning them to this instance (crd) of the Card..
 
-                crd.setCardNo(Integer.parseInt(et_AddCardNo.getText().toString().trim()));
+                crd.setCardNo(et_AddCardNo.getText().toString().trim());
                 crd.setHolderName(et_AddHolder.getText().toString().trim());
-                crd.setExpDate(Integer.parseInt(et_AddExpDate.getText().toString().trim()));
+                crd.setExpDate(et_AddExpDate.getText().toString().trim());
                 crd.setCvv(Integer.parseInt(et_AddCVV.getText().toString().trim()));
 
                 //Insert in to the database...
-                dbRef.push().setValue(crd);
-                //dbRef.child("key").setValue(crd); //to replace data to same record
+                /*dbRef.push().setValue(crd);*/
+                dbRef.child("Card1").setValue(crd); //to replace data to same record
                 //Feedback to the user via a Toast...
                 Toast.makeText(getApplicationContext(), "Card added Successfully", Toast.LENGTH_SHORT).show();
                 clearControls();
@@ -77,6 +78,12 @@ public class AddCard extends AppCompatActivity {
         } catch(NumberFormatException e){
             Toast.makeText(getApplicationContext(), "Invalid Card Number", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void backCardOptions(View view) {
+        Intent intent = new Intent(this, CardOptions.class);
+
+        startActivity(intent);
     }
 
 }
