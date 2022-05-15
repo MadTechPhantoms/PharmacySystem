@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -127,13 +128,13 @@ public class Prodadapter extends FirebaseRecyclerAdapter<modelprod, Prodadapter.
 
     class prodviewholder extends RecyclerView.ViewHolder{
 
-        CircleImageView img;
+        ImageView img;
         TextView prdname, prdprice;
         ImageButton editbtn,dltbtn;
 
         public prodviewholder(@NonNull View itemView) {
             super(itemView);
-            img = (CircleImageView) itemView.findViewById(R.id.img1);
+            img = (ImageView) itemView.findViewById(R.id.img1);
             prdname = (TextView) itemView.findViewById(R.id.prod_name);
             prdprice = (TextView) itemView.findViewById(R.id.prod_price);
 

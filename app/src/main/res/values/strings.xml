@@ -45,6 +45,8 @@
     <string name="confno">No</string>
     <string name="quantity">3</string>
     <string name="addcart">Add to cart</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 
 
     //IT20658472
@@ -89,7 +91,7 @@
     <string name="addtextview5">Image URL</string>
     <string name="viewprod"><![CDATA[View>>]]></string>
 
-<!--    aathif-->
+    <!--    aathif-->
 
     <string name="orderid">Orders</string>
     <string name="oid">OD001</string>

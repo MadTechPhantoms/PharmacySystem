@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class ProdMainActivity extends AppCompatActivity {
 
-    Button prod;
+    Button prod, feedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,15 @@ public class ProdMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProdMainActivity.this,ProdView.class);
+                startActivity(intent);
+            }
+        });
+
+        feedback = findViewById(R.id.btn_feed);
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProdMainActivity.this,AdminFeedbackView.class);
                 startActivity(intent);
             }
         });

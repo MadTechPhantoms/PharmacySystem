@@ -12,11 +12,13 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/btn_backfeed"
                 android:layout_width="50dp"
                 android:layout_height="55dp"
-                android:background="@android:color/transparent"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_back_black"/>
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_back_black"
+                tools:ignore="SpeakableTextPresentCheck" />
 
 
             <TextView
@@ -67,17 +69,17 @@
         </LinearLayout>
 
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swip"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
-            android:layout_marginBottom="10dp">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="10dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </RelativeLayout>

@@ -10,6 +10,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +24,8 @@ public class RVActivity extends AppCompatActivity {
     RVAdapter adapter;
     private CardView add_feedback;
 
+    ImageButton back;
+
     DAOFeedback dao;
     boolean isLoading=false;
     String key =null;
@@ -31,6 +34,15 @@ public class RVActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rvactivity);
+
+        back = findViewById(R.id.btn_backfeed);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RVActivity.this,ProdViewCus.class);
+                startActivity(intent);
+            }
+        });
 
         swipeRefreshLayout = findViewById(R.id.swip);
         recyclerView = findViewById(R.id.rv);

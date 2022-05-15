@@ -14,22 +14,23 @@
         android:padding="15dp">
 
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/img1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@mipmap/ic_launcher"
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp"
+            android:layout_centerHorizontal="true"
             tools:ignore="MissingClass" />
 
         <TextView
             android:id="@+id/prod_name"
-            android:layout_width="121dp"
-            android:layout_height="wrap_content"
+            android:layout_width="116dp"
+            android:layout_height="28dp"
             android:layout_alignBottom="@+id/img1"
-            android:layout_marginLeft="-77dp"
-            android:layout_marginBottom="-37dp"
+            android:layout_marginLeft="-97dp"
+            android:layout_marginBottom="-34dp"
             android:layout_toRightOf="@id/img1"
             android:text="This is Demo Name"
             android:textColor="#000"
@@ -38,11 +39,11 @@
 
         <TextView
             android:id="@+id/prod_price"
-            android:layout_width="match_parent"
+            android:layout_width="114dp"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/prod_name"
-            android:layout_marginLeft="-76dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginLeft="-97dp"
+            android:layout_marginTop="24dp"
             android:layout_toRightOf="@id/img1"
             android:text="This is Course "
             android:textColor="#000"
@@ -64,7 +65,7 @@
             android:layout_width="36dp"
             android:layout_height="29dp"
             android:layout_below="@id/prod_price"
-            android:layout_marginLeft="-37dp"
+            android:layout_marginLeft="-42dp"
             android:layout_marginTop="7dp"
             android:layout_toRightOf="@id/img1"
             android:src="@drawable/edit"

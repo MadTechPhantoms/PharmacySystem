@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +22,7 @@ public class AdminFeedbackView extends AppCompatActivity {
     SwipeRefreshLayout swipeRefreshLayout;
     RecyclerView recyclerView;
     RVAdapterAdmin adapter;
+    ImageButton back;
 
 
     DAOFeedback dao;
@@ -31,6 +34,15 @@ public class AdminFeedbackView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_feedback_view);
+
+        back = findViewById(R.id.backadmin);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminFeedbackView.this,ProdMainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         swipeRefreshLayout = findViewById(R.id.swip1);
         recyclerView = findViewById(R.id.rv1);

@@ -147,13 +147,13 @@ public class Cartadapter extends FirebaseRecyclerAdapter<modelprod, com.example.
 
     class prodviewholder extends RecyclerView.ViewHolder{
 
-        CircleImageView img;
+        ImageView img;
         TextView prdname, prdprice,prquantity;
         ImageButton editbtn,dltbtn;
 
         public prodviewholder(@NonNull View itemView) {
             super(itemView);
-            img = (CircleImageView) itemView.findViewById(R.id.img1);
+            img = (ImageView) itemView.findViewById(R.id.img1);
             prdname = (TextView) itemView.findViewById(R.id.Cprod_name);
             prdprice = (TextView) itemView.findViewById(R.id.Cprod_price);
             prquantity = (TextView) itemView.findViewById(R.id.Cquantity);

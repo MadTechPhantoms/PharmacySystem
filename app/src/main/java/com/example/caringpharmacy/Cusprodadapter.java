@@ -100,6 +100,7 @@ public class Cusprodadapter extends FirebaseRecyclerAdapter<modelprod,Cusprodada
                             prodobj.setPrimgurl(imageurl.getText().toString().trim());
 
                             dbRef.push().setValue(prodobj);
+                            dialogPlus.dismiss();
 
 
                         }catch(Exception e){
@@ -121,14 +122,14 @@ public class Cusprodadapter extends FirebaseRecyclerAdapter<modelprod,Cusprodada
 
     class prodviewholder extends RecyclerView.ViewHolder{
 
-        CircleImageView img;
+        ImageView img;
         TextView prdname, prdprice;
         RelativeLayout rlay;
 
 
         public prodviewholder(@NonNull View itemView) {
             super(itemView);
-            img = (CircleImageView) itemView.findViewById(R.id.imgcus);
+            img = (ImageView) itemView.findViewById(R.id.imgcus);
             prdname = (TextView) itemView.findViewById(R.id.prod_name2);
             prdprice = (TextView) itemView.findViewById(R.id.prod_price2);
             rlay=(RelativeLayout)itemView.findViewById(R.id.rlay);

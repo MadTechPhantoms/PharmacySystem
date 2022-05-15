@@ -186,6 +186,7 @@
             tools:ignore="MissingConstraints">
 
             <ImageButton
+                android:id="@+id/btn_backcont"
                 android:layout_width="50dp"
                 android:layout_height="55dp"
                 android:layout_gravity="center"

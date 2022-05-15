@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -14,12 +17,23 @@ import android.os.Bundle;
 
 public class ContactUs extends AppCompatActivity {
 
+    ImageButton back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_us);
+
+        back = findViewById(R.id.btn_backcont);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ContactUs.this,ProdViewCus.class);
+                startActivity(intent);
+            }
+        });
 
         final EditText cname = findViewById(R.id.cname);
         final EditText cphone = findViewById(R.id.cphone);
