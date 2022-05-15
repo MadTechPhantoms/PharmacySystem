@@ -121,38 +121,6 @@
           ]
         }
       }
-
-
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:41281752625:android:8a665b4a79208838474f10",
-        "android_client_info": {
-          "package_name": "com.hellokh.sovary.firetest"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "41281752625-7v48iqojaa8d5tq20du76usc8enfjoma.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBJa_MXVDYzllxgtyFBH7TswogbnRAbjD4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "41281752625-7v48iqojaa8d5tq20du76usc8enfjoma.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-
     }
   ],
   "configuration_version": "1"
