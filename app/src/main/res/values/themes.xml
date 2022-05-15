@@ -13,4 +13,15 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+        //IT20658472
+
+        <style name="Theme.CaringPharmacy.NoActionBar">
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+        </style>
+
+    <style name="Theme.CaringPharmacy.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.CaringPharmacy.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
