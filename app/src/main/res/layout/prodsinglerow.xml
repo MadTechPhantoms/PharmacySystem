@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:elevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            android:layout_centerHorizontal="true"
+            tools:ignore="MissingClass" />
+
+        <TextView
+            android:id="@+id/prod_name"
+            android:layout_width="116dp"
+            android:layout_height="28dp"
+            android:layout_alignBottom="@+id/img1"
+            android:layout_marginLeft="-97dp"
+            android:layout_marginBottom="-34dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="This is Demo Name"
+            android:textColor="#000"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/prod_price"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/prod_name"
+            android:layout_marginLeft="-97dp"
+            android:layout_marginTop="24dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="This is Course "
+            android:textColor="#000"
+            android:textSize="12sp" />
+
+        <ImageButton
+            android:id="@+id/dltbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_below="@id/prod_price"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@id/img1"
+            android:src="@drawable/delete"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/editbtn"
+            android:layout_width="36dp"
+            android:layout_height="29dp"
+            android:layout_below="@id/prod_price"
+            android:layout_marginLeft="-42dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@id/img1"
+            android:src="@drawable/edit"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

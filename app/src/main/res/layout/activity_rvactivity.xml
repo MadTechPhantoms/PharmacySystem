@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RVActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_backfeed"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_back_black"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+
+            <TextView
+                android:layout_weight="5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feedbacks"
+                android:textColor="@color/text_color"
+                android:textSize="17sp"
+                android:layout_gravity="center_vertical"/>
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="150dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/add_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="1dp"
+                app:cardElevation="3dp"
+                android:layout_marginRight="110dp"
+                android:layout_marginLeft="110dp"
+                app:contentPadding="9dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/btn">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Feedback"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:layout_gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
