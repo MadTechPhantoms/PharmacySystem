@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MsgDeleteProfile">
+
+    <TextView
+        android:id="@+id/tv_DeleteCard"
+        android:layout_width="340dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="34dp"
+        android:text="@string/tv_DeleteProfile"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/tv_DeleteProfile" />
+
+    <Button
+        android:id="@+id/btn_DeleteCardYes"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#267458"
+        android:text="@string/btn_DeleteProfYes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_DeleteCard"
+        tools:text="@string/btn_DeleteProfYes" />
+
+    <Button
+        android:id="@+id/btn_DeleteCardNo"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="53dp"
+        android:backgroundTint="#267458"
+        android:onClick="backEditProfile"
+        android:text="@string/btn_DeleteProfNo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_DeleteCard"
+        tools:text="@string/btn_DeleteProfNo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
