@@ -71,11 +71,11 @@ public class ProdViewCus extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if(menuItem.getItemId() == R.id.feedback){
-                    Intent intent = getIntent();
-                    String uemail = intent.getStringExtra("user");
-                    Intent intent2 = new Intent(ProdViewCus.this, RVActivity.class);
-                    intent2.putExtra("user", uemail);
-                    startActivity(intent2);
+/*                    Intent intent = getIntent();
+                    String uemail = intent.getStringExtra("user");*/
+                    Intent intent = new Intent(ProdViewCus.this, RVActivity.class);
+/*                    intent2.putExtra("user", uemail);*/
+                    startActivity(intent);
                 }
                 else if(menuItem.getItemId() == R.id.contactus){
                     Intent intent = new Intent(ProdViewCus.this, ContactUs.class);

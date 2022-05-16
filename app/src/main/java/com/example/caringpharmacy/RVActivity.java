@@ -76,11 +76,11 @@ public class RVActivity extends AppCompatActivity {
         add_feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getIntent();
-                String uemail = intent.getStringExtra("user");
-                Intent intent2 = new Intent(RVActivity.this, FeedbackMainActivity.class);
-                intent2.putExtra("user", uemail);
-                startActivity(intent2);
+/*                Intent intent = getIntent();
+                String uemail = intent.getStringExtra("user");*/
+                Intent intent = new Intent(RVActivity.this, FeedbackMainActivity.class);
+/*                intent2.putExtra("user", uemail);*/
+                startActivity(intent);
             }
         });
 
