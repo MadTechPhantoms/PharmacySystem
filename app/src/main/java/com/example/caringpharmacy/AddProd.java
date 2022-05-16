@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,6 +16,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -42,6 +44,7 @@ public class AddProd extends AppCompatActivity {
 
     EditText pname, pprice, pimgurl;
     Button btn_add, choose, upload;
+    ImageButton back;
     DatabaseReference dbRef;
     Product prd;
 
@@ -49,6 +52,15 @@ public class AddProd extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_prod);
+
+        back = findViewById(R.id.btn_backdash);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddProd.this,ProdMainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         img = findViewById(R.id.imageview_up);
         upload = findViewById(R.id.btn_upload);

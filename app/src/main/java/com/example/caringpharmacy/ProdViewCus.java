@@ -71,8 +71,11 @@ public class ProdViewCus extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if(menuItem.getItemId() == R.id.feedback){
-                    Intent intent = new Intent(ProdViewCus.this, RVActivity.class);
-                    startActivity(intent);
+                    Intent intent = getIntent();
+                    String uemail = intent.getStringExtra("user");
+                    Intent intent2 = new Intent(ProdViewCus.this, RVActivity.class);
+                    intent2.putExtra("user", uemail);
+                    startActivity(intent2);
                 }
                 else if(menuItem.getItemId() == R.id.contactus){
                     Intent intent = new Intent(ProdViewCus.this, ContactUs.class);
@@ -90,7 +93,7 @@ public class ProdViewCus extends AppCompatActivity {
                     startActivity(intent2);
                 }
                 else if(menuItem.getItemId() == R.id.logout){
-                    Intent intent = new Intent(ProdViewCus.this, WelcomePage.class);
+                    Intent intent = new Intent(ProdViewCus.this, CustomerLogin.class);
                     startActivity(intent);
                 }
                 return true;

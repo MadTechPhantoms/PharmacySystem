@@ -106,9 +106,9 @@
         app:layout_constraintTop_toBottomOf="@+id/upd_pprice" />
 
     <ImageButton
-        android:id="@+id/img_backcat"
-        android:layout_width="26dp"
-        android:layout_height="20dp"
+        android:id="@+id/btn_backdash"
+        android:layout_width="30dp"
+        android:layout_height="26dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="248dp"
         android:backgroundTint="@color/white"

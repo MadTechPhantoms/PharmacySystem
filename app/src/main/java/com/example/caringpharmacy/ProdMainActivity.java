@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class ProdMainActivity extends AppCompatActivity {
 
-    Button prod, feedback;
+    Button prod, feedback, logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,15 @@ public class ProdMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProdMainActivity.this,AdminFeedbackView.class);
+                startActivity(intent);
+            }
+        });
+
+        logout = findViewById(R.id.btn_logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProdMainActivity.this,AdminLogin.class);
                 startActivity(intent);
             }
         });

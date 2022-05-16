@@ -48,16 +48,29 @@
 
     <Button
         android:id="@+id/btn_feed"
-        android:layout_width="279dp"
-        android:layout_height="94dp"
+        android:layout_width="283dp"
+        android:layout_height="96dp"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="70dp"
         android:backgroundTint="@color/btn4color"
         android:text="@string/btn4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_prod" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="273dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="44dp"
+        android:text="@string/btn_lout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_feed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

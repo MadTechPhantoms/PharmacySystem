@@ -13,11 +13,12 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/back_feedback"
             android:layout_width="50dp"
             android:layout_height="55dp"
-            android:background="@android:color/transparent"
             android:layout_gravity="center"
-            android:src="@drawable/ic_back_black"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_back_black" />
 
 
         <TextView

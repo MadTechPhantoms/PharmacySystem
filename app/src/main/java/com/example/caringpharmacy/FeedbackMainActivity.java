@@ -7,16 +7,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.HashMap;
 
 public class FeedbackMainActivity extends AppCompatActivity {
 
+    ImageButton back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback_main);
+
+        back = findViewById(R.id.back_feedback);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FeedbackMainActivity.this,RVActivity.class);
+                startActivity(intent);
+            }
+        });
 
         final EditText edit_name = findViewById(R.id.edit_name);
         final EditText edit_position = findViewById(R.id.edit_position);

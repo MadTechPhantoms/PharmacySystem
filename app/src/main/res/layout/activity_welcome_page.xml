@@ -79,17 +79,4 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_WelcomePage"
         app:srcCompat="@drawable/welcomepage" />
 
-    <TextView
-        android:id="@+id/tv_SkipInWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/tv_SkipInWelcome"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_SignUpWelcome"
-        tools:text="@string/tv_SkipInWelcome" />
 </androidx.constraintlayout.widget.ConstraintLayout>

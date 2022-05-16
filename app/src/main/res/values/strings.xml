@@ -285,6 +285,8 @@
     <string name="tv_WelcomePage">Welcome to Caring Pharmacy</string>
     <string name="tv_SkipInWelcome">Skip for now</string>
     <string name="tv_SelectUpdateCard">Update a Card</string>
+    <string name="btn_logout" />
+    <string name="btn_lout">Log Out</string>
 
 
 </resources>

@@ -46,6 +46,8 @@ public class CustomerLogin extends AppCompatActivity {
         Intent intent = new Intent(CustomerLogin.this,ProdViewCus.class);
         String uid = mAuth.getCurrentUser().getUid();
         intent.putExtra("user", uid);
+        String uemail = mAuth.getCurrentUser().getEmail();
+        intent.putExtra("user", uemail);
         startActivity(intent);
     }
 
