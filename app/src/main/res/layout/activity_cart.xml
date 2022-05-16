@@ -33,24 +33,17 @@
         app:layout_constraintVertical_bias="0.039"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <View
-        android:id="@+id/view9"
-        android:layout_width="407dp"
-        android:layout_height="81dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/CHECKOUT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/OdCkeckout"
-        app:layout_constraintBottom_toBottomOf="@+id/view9"
-        app:layout_constraintEnd_toEndOf="@+id/view9"
-        app:layout_constraintStart_toStartOf="@+id/view9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cartview"
+        app:layout_constraintVertical_bias="0.801"
         tools:text="@string/OdCkeckout" />
 
     <TextView
@@ -60,12 +53,10 @@
         android:fontFamily="sans-serif-black"
         android:text="@string/CART"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintVertical_bias="0.048"
         tools:text="@string/CART" />
 
     <androidx.recyclerview.widget.RecyclerView
