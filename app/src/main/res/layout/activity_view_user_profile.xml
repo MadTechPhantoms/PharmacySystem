@@ -7,20 +7,6 @@
     tools:context=".ViewUserProfile">
 
     <ImageButton
-        android:id="@+id/imgbtn_Logout"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="28dp"
-        android:backgroundTint="#FFFFFF"
-        android:onClick="openWelcome"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgbtn_AboutApp"
-        app:srcCompat="@drawable/forwardicon"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <ImageButton
         android:id="@+id/imgbtn_AboutApp"
         android:layout_width="28dp"
         android:layout_height="28dp"
@@ -40,7 +26,6 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="28dp"
         android:backgroundTint="#FFFFFF"
-        android:onClick="openAccSettings"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgbtn_UserOrder"
@@ -82,26 +67,12 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="235dp"
         android:backgroundTint="#FFFFFF"
+        android:onClick="backProductPage"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/imageView11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backicon"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/tv_Logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="255dp"
-        android:text="@string/tv_Logout"
-        android:textColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtn_Logout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_AboutApp"
-        tools:text="@string/tv_Logout" />
 
     <TextView
         android:id="@+id/tv_AccSettings"
@@ -279,19 +250,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView23"
         app:srcCompat="@drawable/aboutappicon" />
-
-    <ImageView
-        android:id="@+id/imageView25"
-        android:layout_width="21dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="14dp"
-        app:layout_constraintEnd_toStartOf="@+id/tv_Logout"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView24"
-        app:srcCompat="@drawable/logouticon" />
 
     <TextView
         android:id="@+id/tv_Profile"

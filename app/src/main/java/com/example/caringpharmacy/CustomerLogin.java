@@ -43,7 +43,7 @@ public class CustomerLogin extends AppCompatActivity {
     }
 
     private void logUser() {
-        Intent intent = new Intent(CustomerLogin.this,ViewUserProfile.class);
+        Intent intent = new Intent(CustomerLogin.this,ProdViewCus.class);
         String uid = mAuth.getCurrentUser().getUid();
         intent.putExtra("user", uid);
         startActivity(intent);

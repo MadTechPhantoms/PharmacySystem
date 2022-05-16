@@ -42,9 +42,9 @@ public class AdminLogin extends AppCompatActivity {
     }
 
     private void logUser() {
-/*        Intent intent = new Intent(AdminLogin.this,AdminDashboard.class);
+        Intent intent = new Intent(AdminLogin.this,ProdMainActivity.class);
 
-        startActivity(intent);*/
+        startActivity(intent);
     }
 
     private void validateFields() {

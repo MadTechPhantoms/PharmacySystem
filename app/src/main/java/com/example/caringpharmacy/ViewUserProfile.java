@@ -97,4 +97,10 @@ public class ViewUserProfile extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void backProductPage(View view) {
+        Intent intent = new Intent(this, ProdViewCus.class);
+
+        startActivity(intent);
+    }
+
 }

@@ -82,6 +82,17 @@ public class ProdViewCus extends AppCompatActivity {
                     Intent intent = new Intent(ProdViewCus.this, AboutUs.class);
                     startActivity(intent);
                 }
+                else if(menuItem.getItemId() == R.id.profile){
+                    Intent intent = getIntent();
+                    String uid = intent.getStringExtra("user");
+                    Intent intent2 = new Intent(ProdViewCus.this, ViewUserProfile.class);
+                    intent2.putExtra("user", uid);
+                    startActivity(intent2);
+                }
+                else if(menuItem.getItemId() == R.id.logout){
+                    Intent intent = new Intent(ProdViewCus.this, WelcomePage.class);
+                    startActivity(intent);
+                }
                 return true;
             }
         });
