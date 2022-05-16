@@ -15,7 +15,7 @@
     <string name="catbtn7">Women</string>
     <string name="catbtn8">Cosmetics</string>
     <string name="catbtn9">Men</string>
-    <string name="prodtopic1"><![CDATA[Products/Mom & Baby]]></string>
+    <string name="prodtopic1">Products</string>
     <string name="addtopic1">Add Product</string>
     <string name="addtext1">Category</string>
     <string name="addtext2">Product Name</string>
@@ -45,6 +45,133 @@
     <string name="confno">No</string>
     <string name="quantity">3</string>
     <string name="addcart">Add to cart</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+
+    //IT20658472
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="msg">Very useful and great pharmacy, They have the best support ever</string>
+    <string name="add">Add</string>
+    <string name="hint">TYPE YOUR  FEEDBACK HERE</string>
+    <string name="name">Harsha.D</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="feedback">Feedback</string>
+
+    <string name="title_activity_feedback_create">FeedbackCreateActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_feedback_edit">FeedbackEditActivity</string>
+
+    <style name="Theme.Mad" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!--        name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant-->
+
+    </style>
+
+
+    <string name="title_activity_rv">RVActivity</string>
+
+    <string name="addtextview4">Category</string>
+    <string name="btn_choose">Choose...</string>
+    <string name="btn_upld">Upload</string>
+    <string name="addtextview5">Image URL</string>
+    <string name="viewprod"><![CDATA[View>>]]></string>
+
+    <!--    aathif-->
+
+    <string name="orderid">Orders</string>
+    <string name="oid">OD001</string>
+    <string name="odbtn1">OD001</string>
+    <string name="odbtn2">OD002</string>
+    <string name="odbtn3">OD003</string>
+    <string name="odbtn4">OD007</string>
+    <string name="odbtn5">OD124</string>
+    <string name="odbtn7">OD010</string>
+    <string name="odbtn8">OD125</string>
+    <string name="odbtn9">OD223</string>
+    <string name="logo">LOGO</string>
+    <string name="backicon">BACKICON</string>
+    <string name="odprocess1">Order Number -OD001</string>
+    <string name="odprocess2">Glycomet SR 500g x 3 cards Metphormin 5mg x  4 cards Aspirin x 2 cards</string>
+    <string name="odcancel">Cancel</string>
+    <string name="odprocess">Process</string>
+    <string name="editTextDate">25/05/2021</string>
+    <string name="date">25/05/2021</string>
+    <string name="time">12:36 PM</string>
+    <string name="Myod">My Order</string>
+    <string name="Saveod">SAVE</string>
+    <string name="MyOdText">The final amount cannot be reduced when editing order. It should cover or exceed the final amount</string>
+    <string name="date1">21/05/2021</string>
+    <string name="time1">12:36 PM</string>
+    <string name="ODNO">Order Number -OD65489</string>
+    <string name="STATUS"><![CDATA[<<PROCESSING>>]]></string>
+    <string name="time2">5:20 PM</string>
+    <string name="date2">18/05/2021</string>
+    <string name="STATUS1"><![CDATA[<<SHIPPED>>]]></string>
+    <string name="ODNO1">Order Number -OD15648</string>
+    <string name="date3">27/03/2021</string>
+    <string name="time3">10.12 AM</string>
+    <string name="ODNO2">Order Number -OD84564</string>
+    <string name="STATUS2"><![CDATA[<<DELIVERED>>]]></string>
+    <string name="date4">09/02/2021</string>
+    <string name="time4">7.43 AM</string>
+    <string name="ODNO3">Order Number -OD58421</string>
+    <string name="STATUS3"><![CDATA[<<DELIVERED>>]]></string>
+    <string name="Odupd">UPDATE</string>
+    <string name="toPrce">Total Price</string>
+    <string name="Disc">Discount</string>
+    <string name="netPrce">Net Price</string>
+    <string name="value1">LKR 1050</string>
+    <string name="value2">LKR 50</string>
+    <string name="value3">LKR 1000</string>
+    <string name="prc1">LKR 100</string>
+    <string name="pName">Metformin 100g</string>
+    <string name="prc2">LKR 150</string>
+    <string name="pName2">Glycomet Sr 500mg</string>
+    <string name="PDelete">Are you sure you want to delete this Order?</string>
+    <string name="pDeleteYes">YES</string>
+    <string name="pDeleteNo">NO</string>
+    <string name="OdCkeckout">CHECKOUT</string>
+    <string name="CART">CART</string>
+    <string name="quantity1">4</string>
+    <string name="quantity2">3</string>
+    <string name="upText">Make changes in order</string>
+    <string name="ContactUs">Contact Us</string>
+    <string name="Con1">Get in touch!</string>
+    <string name="Con2">We’d love to hear from you</string>
+    <string name="TextPhone">0777712345</string>
+    <string name="Cbutton">Send Message</string>
+    <string name="Cmsg" />
+    <string name="Cphne" />
+    <string name="Cname">Name</string>
+    <string name="CnameT" />
+    <string name="CemailT" />
+    <string name="Phone">Phone</string>
+    <string name="Email">Email</string>
+    <string name="Message">Message</string>
+    <string name="AboutUs">About Us</string>
+    <string name="text12">There is always something new to look forward to  when you visit Caring Pharmacy!</string>
+    <string name="abUs">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop "</string>
+    <string name="mailmsg">caringpharma@gmail.com</string>
+    <string name="addmsg">NO 113 Hassen Filling Station,Warakapola</string>
+    <string name="LKR">LKR</string>
+    <string name="Quantity">Quantity</string>
+    <string name="Qt">Qt</string>
+    <string name="ee">Enter New Quantity</string>
 
     <!--Supun-->
 
@@ -158,4 +285,6 @@
     <string name="tv_WelcomePage">Welcome to Caring Pharmacy</string>
     <string name="tv_SkipInWelcome">Skip for now</string>
     <string name="tv_SelectUpdateCard">Update a Card</string>
+
+
 </resources>
