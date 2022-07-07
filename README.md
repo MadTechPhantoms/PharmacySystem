@@ -5,7 +5,7 @@ A pharmacy management system facilitating in ordering drugs and pharmaceutical p
 
 Group Leader - IT20648190 - Mr. M.N.T.Ahmed (IT20648190)
 
-Member 2 - IT20653118 - Mr. Y.W.S.H.Wishvajith (IT-20653118)
+Member 2 - IT20653118 - Mr. Y.W.S.H.Wishvajith (IT20653118)
 
 Member 3 - IT20658472 - Miss. D.I.Weerapperuma (IT20658472)
 
